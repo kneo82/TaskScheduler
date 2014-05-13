@@ -98,6 +98,12 @@
 		550BADC81921F55C001F393D /* UIView+IDPExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 550BAD7C1921F55C001F393D /* UIView+IDPExtensions.m */; };
 		550BADC91921F55C001F393D /* UIViewController+IDPExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 550BAD7E1921F55C001F393D /* UIViewController+IDPExtensions.m */; };
 		550BADCA1921F55C001F393D /* UIViewController+IDPInitialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 550BAD801921F55C001F393D /* UIViewController+IDPInitialization.m */; };
+		550BADDA192207E5001F393D /* CKCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 550BADD3192207E5001F393D /* CKCalendarView.m */; };
+		550BADDB192207E5001F393D /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 550BADD4192207E5001F393D /* README.md */; };
+		550BADDC192207E5001F393D /* left_arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 550BADD6192207E5001F393D /* left_arrow.png */; };
+		550BADDD192207E5001F393D /* left_arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 550BADD7192207E5001F393D /* left_arrow@2x.png */; };
+		550BADDE192207E5001F393D /* right_arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 550BADD8192207E5001F393D /* right_arrow.png */; };
+		550BADDF192207E5001F393D /* right_arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 550BADD9192207E5001F393D /* right_arrow@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -269,6 +275,13 @@
 		550BAD7E1921F55C001F393D /* UIViewController+IDPExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+IDPExtensions.m"; sourceTree = "<group>"; };
 		550BAD7F1921F55C001F393D /* UIViewController+IDPInitialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+IDPInitialization.h"; sourceTree = "<group>"; };
 		550BAD801921F55C001F393D /* UIViewController+IDPInitialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+IDPInitialization.m"; sourceTree = "<group>"; };
+		550BADD2192207E5001F393D /* CKCalendarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKCalendarView.h; sourceTree = "<group>"; };
+		550BADD3192207E5001F393D /* CKCalendarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKCalendarView.m; sourceTree = "<group>"; };
+		550BADD4192207E5001F393D /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		550BADD6192207E5001F393D /* left_arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = left_arrow.png; sourceTree = "<group>"; };
+		550BADD7192207E5001F393D /* left_arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "left_arrow@2x.png"; sourceTree = "<group>"; };
+		550BADD8192207E5001F393D /* right_arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = right_arrow.png; sourceTree = "<group>"; };
+		550BADD9192207E5001F393D /* right_arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "right_arrow@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -332,6 +345,7 @@
 		550BAC9C1921EFB7001F393D /* TaskScheduler */ = {
 			isa = PBXGroup;
 			children = (
+				550BADD1192207E5001F393D /* CKCalendar */,
 				550BACD91921F55B001F393D /* IDPKit */,
 				550BACA51921EFB7001F393D /* TSAppDelegate.h */,
 				550BACA61921EFB7001F393D /* TSAppDelegate.m */,
@@ -765,6 +779,28 @@
 			path = src;
 			sourceTree = "<group>";
 		};
+		550BADD1192207E5001F393D /* CKCalendar */ = {
+			isa = PBXGroup;
+			children = (
+				550BADD2192207E5001F393D /* CKCalendarView.h */,
+				550BADD3192207E5001F393D /* CKCalendarView.m */,
+				550BADD4192207E5001F393D /* README.md */,
+				550BADD5192207E5001F393D /* resources */,
+			);
+			path = CKCalendar;
+			sourceTree = "<group>";
+		};
+		550BADD5192207E5001F393D /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				550BADD6192207E5001F393D /* left_arrow.png */,
+				550BADD7192207E5001F393D /* left_arrow@2x.png */,
+				550BADD8192207E5001F393D /* right_arrow.png */,
+				550BADD9192207E5001F393D /* right_arrow@2x.png */,
+			);
+			path = resources;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -845,10 +881,14 @@
 				550BAD851921F55C001F393D /* .gitignore in Resources */,
 				550BAD831921F55C001F393D /* LICENSE in Resources */,
 				550BADB91921F55C001F393D /* LICENSE in Resources */,
+				550BADDB192207E5001F393D /* README.md in Resources */,
 				550BAD871921F55C001F393D /* README.md in Resources */,
 				550BADBC1921F55C001F393D /* .gitignore in Resources */,
+				550BADDD192207E5001F393D /* left_arrow@2x.png in Resources */,
 				550BAD811921F55C001F393D /* .gitignore in Resources */,
 				550BADB41921F55C001F393D /* .gitignore in Resources */,
+				550BADDE192207E5001F393D /* right_arrow.png in Resources */,
+				550BADDF192207E5001F393D /* right_arrow@2x.png in Resources */,
 				550BAD8E1921F55C001F393D /* README.md in Resources */,
 				550BADB51921F55C001F393D /* LICENSE in Resources */,
 				550BAD8C1921F55C001F393D /* .gitignore in Resources */,
@@ -864,6 +904,7 @@
 				550BAD821921F55C001F393D /* .gitmodules in Resources */,
 				550BAD861921F55C001F393D /* LICENSE in Resources */,
 				550BACCA1921EFF5001F393D /* .gitignore in Resources */,
+				550BADDC192207E5001F393D /* left_arrow.png in Resources */,
 				550BADBA1921F55C001F393D /* README.md in Resources */,
 				550BACAC1921EFB7001F393D /* Images.xcassets in Resources */,
 			);
@@ -896,6 +937,7 @@
 				550BADA11921F55C001F393D /* IDPModel.m in Sources */,
 				550BADAF1921F55C001F393D /* IDPRetainingDictionary.m in Sources */,
 				550BADC81921F55C001F393D /* UIView+IDPExtensions.m in Sources */,
+				550BADDA192207E5001F393D /* CKCalendarView.m in Sources */,
 				550BAD9C1921F55C001F393D /* IDPBufferArray.m in Sources */,
 				550BAD9B1921F55C001F393D /* IDPBlock.m in Sources */,
 				550BADAD1921F55C001F393D /* IDPRetainingReference.m in Sources */,
