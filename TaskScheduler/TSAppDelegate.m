@@ -7,8 +7,10 @@
 //
 
 #import "TSAppDelegate.h"
+#import "TSCalendarViewController.h"
 
 #import "UIWindow+TDExtensions.h"
+#import "UIViewController+IDPInitialization.h"
 
 @interface TSAppDelegate ()
 
@@ -37,11 +39,13 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
   
 //    [IDPCoreDataManager sharedManagerWithMomName:kTDStoreName];
     
-//    UINavigationController *controller = nil;
-//    controller = [[UINavigationController alloc] initWithRootViewController:loginController];
-//    [controller autorelease];
+    TSCalendarViewController *calendarController = [TSCalendarViewController viewControllerWithDefaultNib];
     
-//    window.rootViewController = controller;
+    UINavigationController *controller = nil;
+    controller = [[UINavigationController alloc] initWithRootViewController:calendarController];
+    [controller autorelease];
+    
+    window.rootViewController = controller;
     window.backgroundColor = [UIColor whiteColor];
     [window makeKeyAndVisible];
     

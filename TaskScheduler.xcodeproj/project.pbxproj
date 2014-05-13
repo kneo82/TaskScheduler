@@ -104,6 +104,9 @@
 		550BADDD192207E5001F393D /* left_arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 550BADD7192207E5001F393D /* left_arrow@2x.png */; };
 		550BADDE192207E5001F393D /* right_arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 550BADD8192207E5001F393D /* right_arrow.png */; };
 		550BADDF192207E5001F393D /* right_arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 550BADD9192207E5001F393D /* right_arrow@2x.png */; };
+		550BADE419220EE2001F393D /* TSCalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 550BADE219220EE2001F393D /* TSCalendarViewController.m */; };
+		550BADE519220EE2001F393D /* TSCalendarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 550BADE319220EE2001F393D /* TSCalendarViewController.xib */; };
+		550BADE8192210A6001F393D /* TSCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 550BADE7192210A6001F393D /* TSCalendarView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -282,6 +285,11 @@
 		550BADD7192207E5001F393D /* left_arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "left_arrow@2x.png"; sourceTree = "<group>"; };
 		550BADD8192207E5001F393D /* right_arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = right_arrow.png; sourceTree = "<group>"; };
 		550BADD9192207E5001F393D /* right_arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "right_arrow@2x.png"; sourceTree = "<group>"; };
+		550BADE119220EE2001F393D /* TSCalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSCalendarViewController.h; sourceTree = "<group>"; };
+		550BADE219220EE2001F393D /* TSCalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSCalendarViewController.m; sourceTree = "<group>"; };
+		550BADE319220EE2001F393D /* TSCalendarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TSCalendarViewController.xib; sourceTree = "<group>"; };
+		550BADE6192210A6001F393D /* TSCalendarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSCalendarView.h; sourceTree = "<group>"; };
+		550BADE7192210A6001F393D /* TSCalendarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSCalendarView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -351,6 +359,7 @@
 				550BACA61921EFB7001F393D /* TSAppDelegate.m */,
 				550BACAB1921EFB7001F393D /* Images.xcassets */,
 				550BACA81921EFB7001F393D /* TaskScheduler.xcdatamodeld */,
+				550BADE019220E5E001F393D /* CalendarViewController */,
 				550BACCC1921F29A001F393D /* Category */,
 				550BAC9D1921EFB7001F393D /* Supporting Files */,
 			);
@@ -801,6 +810,18 @@
 			path = resources;
 			sourceTree = "<group>";
 		};
+		550BADE019220E5E001F393D /* CalendarViewController */ = {
+			isa = PBXGroup;
+			children = (
+				550BADE119220EE2001F393D /* TSCalendarViewController.h */,
+				550BADE219220EE2001F393D /* TSCalendarViewController.m */,
+				550BADE319220EE2001F393D /* TSCalendarViewController.xib */,
+				550BADE6192210A6001F393D /* TSCalendarView.h */,
+				550BADE7192210A6001F393D /* TSCalendarView.m */,
+			);
+			path = CalendarViewController;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -884,6 +905,7 @@
 				550BADDB192207E5001F393D /* README.md in Resources */,
 				550BAD871921F55C001F393D /* README.md in Resources */,
 				550BADBC1921F55C001F393D /* .gitignore in Resources */,
+				550BADE519220EE2001F393D /* TSCalendarViewController.xib in Resources */,
 				550BADDD192207E5001F393D /* left_arrow@2x.png in Resources */,
 				550BAD811921F55C001F393D /* .gitignore in Resources */,
 				550BADB41921F55C001F393D /* .gitignore in Resources */,
@@ -942,6 +964,7 @@
 				550BAD9B1921F55C001F393D /* IDPBlock.m in Sources */,
 				550BADAD1921F55C001F393D /* IDPRetainingReference.m in Sources */,
 				550BADC01921F55C001F393D /* IDPShareObject.m in Sources */,
+				550BADE419220EE2001F393D /* TSCalendarViewController.m in Sources */,
 				550BADC61921F55C001F393D /* UIStoryboard+IDPExtensions.m in Sources */,
 				550BADAE1921F55C001F393D /* IDPWeakReference.m in Sources */,
 				550BAD961921F55C001F393D /* NSObject+IDPExtensions.m in Sources */,
@@ -971,6 +994,7 @@
 				550BADA91921F55C001F393D /* NSObject+IDPOCExtensions.m in Sources */,
 				550BADC71921F55C001F393D /* UITableView+IDPCellLoading.m in Sources */,
 				550BADAB1921F55C001F393D /* IDPObservableObject.m in Sources */,
+				550BADE8192210A6001F393D /* TSCalendarView.m in Sources */,
 				550BAD911921F55C001F393D /* NSArray+IDPExtensions.m in Sources */,
 				550BAD971921F55C001F393D /* NSString+IDPExtensions.m in Sources */,
 				550BADA41921F55C001F393D /* IDPMutableDictionary.m in Sources */,

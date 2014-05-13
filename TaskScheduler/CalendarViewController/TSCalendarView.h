@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+@class CKCalendarView;
+
 @interface TSCalendarView : UIView
+@property (nonatomic, retain) IBOutlet CKCalendarView *calendar;
 
 @end
