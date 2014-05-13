@@ -1,0 +1,480 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		550BAC951921EFB7001F393D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 550BAC941921EFB7001F393D /* Foundation.framework */; };
+		550BAC971921EFB7001F393D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 550BAC961921EFB7001F393D /* CoreGraphics.framework */; };
+		550BAC991921EFB7001F393D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 550BAC981921EFB7001F393D /* UIKit.framework */; };
+		550BAC9B1921EFB7001F393D /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 550BAC9A1921EFB7001F393D /* CoreData.framework */; };
+		550BACA11921EFB7001F393D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 550BAC9F1921EFB7001F393D /* InfoPlist.strings */; };
+		550BACA31921EFB7001F393D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 550BACA21921EFB7001F393D /* main.m */; };
+		550BACA71921EFB7001F393D /* TSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 550BACA61921EFB7001F393D /* TSAppDelegate.m */; };
+		550BACAA1921EFB7001F393D /* TaskScheduler.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 550BACA81921EFB7001F393D /* TaskScheduler.xcdatamodeld */; };
+		550BACAC1921EFB7001F393D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 550BACAB1921EFB7001F393D /* Images.xcassets */; };
+		550BACB31921EFB7001F393D /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 550BACB21921EFB7001F393D /* XCTest.framework */; };
+		550BACB41921EFB7001F393D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 550BAC941921EFB7001F393D /* Foundation.framework */; };
+		550BACB51921EFB7001F393D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 550BAC981921EFB7001F393D /* UIKit.framework */; };
+		550BACB61921EFB7001F393D /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 550BAC9A1921EFB7001F393D /* CoreData.framework */; };
+		550BACBE1921EFB7001F393D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 550BACBC1921EFB7001F393D /* InfoPlist.strings */; };
+		550BACC01921EFB7001F393D /* TaskSchedulerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 550BACBF1921EFB7001F393D /* TaskSchedulerTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		550BACB71921EFB7001F393D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 550BAC891921EFB7001F393D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 550BAC901921EFB7001F393D;
+			remoteInfo = TaskScheduler;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		550BAC911921EFB7001F393D /* TaskScheduler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaskScheduler.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		550BAC941921EFB7001F393D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		550BAC961921EFB7001F393D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		550BAC981921EFB7001F393D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		550BAC9A1921EFB7001F393D /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		550BAC9E1921EFB7001F393D /* TaskScheduler-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TaskScheduler-Info.plist"; sourceTree = "<group>"; };
+		550BACA01921EFB7001F393D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		550BACA21921EFB7001F393D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		550BACA41921EFB7001F393D /* TaskScheduler-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TaskScheduler-Prefix.pch"; sourceTree = "<group>"; };
+		550BACA51921EFB7001F393D /* TSAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TSAppDelegate.h; sourceTree = "<group>"; };
+		550BACA61921EFB7001F393D /* TSAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TSAppDelegate.m; sourceTree = "<group>"; };
+		550BACA91921EFB7001F393D /* TaskScheduler.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TaskScheduler.xcdatamodel; sourceTree = "<group>"; };
+		550BACAB1921EFB7001F393D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		550BACB11921EFB7001F393D /* TaskSchedulerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TaskSchedulerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		550BACB21921EFB7001F393D /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		550BACBB1921EFB7001F393D /* TaskSchedulerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TaskSchedulerTests-Info.plist"; sourceTree = "<group>"; };
+		550BACBD1921EFB7001F393D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		550BACBF1921EFB7001F393D /* TaskSchedulerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TaskSchedulerTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		550BAC8E1921EFB7001F393D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				550BAC971921EFB7001F393D /* CoreGraphics.framework in Frameworks */,
+				550BAC9B1921EFB7001F393D /* CoreData.framework in Frameworks */,
+				550BAC991921EFB7001F393D /* UIKit.framework in Frameworks */,
+				550BAC951921EFB7001F393D /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		550BACAE1921EFB7001F393D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				550BACB31921EFB7001F393D /* XCTest.framework in Frameworks */,
+				550BACB61921EFB7001F393D /* CoreData.framework in Frameworks */,
+				550BACB51921EFB7001F393D /* UIKit.framework in Frameworks */,
+				550BACB41921EFB7001F393D /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		550BAC881921EFB7001F393D = {
+			isa = PBXGroup;
+			children = (
+				550BAC9C1921EFB7001F393D /* TaskScheduler */,
+				550BACB91921EFB7001F393D /* TaskSchedulerTests */,
+				550BAC931921EFB7001F393D /* Frameworks */,
+				550BAC921921EFB7001F393D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		550BAC921921EFB7001F393D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				550BAC911921EFB7001F393D /* TaskScheduler.app */,
+				550BACB11921EFB7001F393D /* TaskSchedulerTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		550BAC931921EFB7001F393D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				550BAC941921EFB7001F393D /* Foundation.framework */,
+				550BAC961921EFB7001F393D /* CoreGraphics.framework */,
+				550BAC981921EFB7001F393D /* UIKit.framework */,
+				550BAC9A1921EFB7001F393D /* CoreData.framework */,
+				550BACB21921EFB7001F393D /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		550BAC9C1921EFB7001F393D /* TaskScheduler */ = {
+			isa = PBXGroup;
+			children = (
+				550BACA51921EFB7001F393D /* TSAppDelegate.h */,
+				550BACA61921EFB7001F393D /* TSAppDelegate.m */,
+				550BACAB1921EFB7001F393D /* Images.xcassets */,
+				550BACA81921EFB7001F393D /* TaskScheduler.xcdatamodeld */,
+				550BAC9D1921EFB7001F393D /* Supporting Files */,
+			);
+			path = TaskScheduler;
+			sourceTree = "<group>";
+		};
+		550BAC9D1921EFB7001F393D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				550BAC9E1921EFB7001F393D /* TaskScheduler-Info.plist */,
+				550BAC9F1921EFB7001F393D /* InfoPlist.strings */,
+				550BACA21921EFB7001F393D /* main.m */,
+				550BACA41921EFB7001F393D /* TaskScheduler-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		550BACB91921EFB7001F393D /* TaskSchedulerTests */ = {
+			isa = PBXGroup;
+			children = (
+				550BACBF1921EFB7001F393D /* TaskSchedulerTests.m */,
+				550BACBA1921EFB7001F393D /* Supporting Files */,
+			);
+			path = TaskSchedulerTests;
+			sourceTree = "<group>";
+		};
+		550BACBA1921EFB7001F393D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				550BACBB1921EFB7001F393D /* TaskSchedulerTests-Info.plist */,
+				550BACBC1921EFB7001F393D /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		550BAC901921EFB7001F393D /* TaskScheduler */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 550BACC31921EFB7001F393D /* Build configuration list for PBXNativeTarget "TaskScheduler" */;
+			buildPhases = (
+				550BAC8D1921EFB7001F393D /* Sources */,
+				550BAC8E1921EFB7001F393D /* Frameworks */,
+				550BAC8F1921EFB7001F393D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TaskScheduler;
+			productName = TaskScheduler;
+			productReference = 550BAC911921EFB7001F393D /* TaskScheduler.app */;
+			productType = "com.apple.product-type.application";
+		};
+		550BACB01921EFB7001F393D /* TaskSchedulerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 550BACC61921EFB7001F393D /* Build configuration list for PBXNativeTarget "TaskSchedulerTests" */;
+			buildPhases = (
+				550BACAD1921EFB7001F393D /* Sources */,
+				550BACAE1921EFB7001F393D /* Frameworks */,
+				550BACAF1921EFB7001F393D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				550BACB81921EFB7001F393D /* PBXTargetDependency */,
+			);
+			name = TaskSchedulerTests;
+			productName = TaskSchedulerTests;
+			productReference = 550BACB11921EFB7001F393D /* TaskSchedulerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		550BAC891921EFB7001F393D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = TS;
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = "Vitaliy Voronok";
+				TargetAttributes = {
+					550BACB01921EFB7001F393D = {
+						TestTargetID = 550BAC901921EFB7001F393D;
+					};
+				};
+			};
+			buildConfigurationList = 550BAC8C1921EFB7001F393D /* Build configuration list for PBXProject "TaskScheduler" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 550BAC881921EFB7001F393D;
+			productRefGroup = 550BAC921921EFB7001F393D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				550BAC901921EFB7001F393D /* TaskScheduler */,
+				550BACB01921EFB7001F393D /* TaskSchedulerTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		550BAC8F1921EFB7001F393D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				550BACA11921EFB7001F393D /* InfoPlist.strings in Resources */,
+				550BACAC1921EFB7001F393D /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		550BACAF1921EFB7001F393D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				550BACBE1921EFB7001F393D /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		550BAC8D1921EFB7001F393D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				550BACAA1921EFB7001F393D /* TaskScheduler.xcdatamodeld in Sources */,
+				550BACA31921EFB7001F393D /* main.m in Sources */,
+				550BACA71921EFB7001F393D /* TSAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		550BACAD1921EFB7001F393D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				550BACC01921EFB7001F393D /* TaskSchedulerTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		550BACB81921EFB7001F393D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 550BAC901921EFB7001F393D /* TaskScheduler */;
+			targetProxy = 550BACB71921EFB7001F393D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		550BAC9F1921EFB7001F393D /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				550BACA01921EFB7001F393D /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		550BACBC1921EFB7001F393D /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				550BACBD1921EFB7001F393D /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		550BACC11921EFB7001F393D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		550BACC21921EFB7001F393D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		550BACC41921EFB7001F393D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TaskScheduler/TaskScheduler-Prefix.pch";
+				INFOPLIST_FILE = "TaskScheduler/TaskScheduler-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		550BACC51921EFB7001F393D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TaskScheduler/TaskScheduler-Prefix.pch";
+				INFOPLIST_FILE = "TaskScheduler/TaskScheduler-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		550BACC71921EFB7001F393D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/TaskScheduler.app/TaskScheduler";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TaskScheduler/TaskScheduler-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "TaskSchedulerTests/TaskSchedulerTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		550BACC81921EFB7001F393D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/TaskScheduler.app/TaskScheduler";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TaskScheduler/TaskScheduler-Prefix.pch";
+				INFOPLIST_FILE = "TaskSchedulerTests/TaskSchedulerTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		550BAC8C1921EFB7001F393D /* Build configuration list for PBXProject "TaskScheduler" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				550BACC11921EFB7001F393D /* Debug */,
+				550BACC21921EFB7001F393D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		550BACC31921EFB7001F393D /* Build configuration list for PBXNativeTarget "TaskScheduler" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				550BACC41921EFB7001F393D /* Debug */,
+				550BACC51921EFB7001F393D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		550BACC61921EFB7001F393D /* Build configuration list for PBXNativeTarget "TaskSchedulerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				550BACC71921EFB7001F393D /* Debug */,
+				550BACC81921EFB7001F393D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		550BACA81921EFB7001F393D /* TaskScheduler.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				550BACA91921EFB7001F393D /* TaskScheduler.xcdatamodel */,
+			);
+			currentVersion = 550BACA91921EFB7001F393D /* TaskScheduler.xcdatamodel */;
+			path = TaskScheduler.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 550BAC891921EFB7001F393D /* Project object */;
+}
