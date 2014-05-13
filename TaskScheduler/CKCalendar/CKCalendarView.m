@@ -43,7 +43,7 @@
 @implementation GradientView
 
 - (id)init {
-    return [self initWithFrame:CGRectZero];
+    return [[self initWithFrame:CGRectZero] retain];
 }
 
 + (Class)layerClass {
@@ -84,7 +84,11 @@
 }
 
 - (void)setDate:(NSDate *)date {
-    _date = date;
+    if (_date != date) {
+        [_date release];
+        _date = [date retain];
+    }
+    
     if (date) {
         NSDateComponents *comps = [self.calendar components:NSDayCalendarUnit|NSMonthCalendarUnit fromDate:date];
         [self setTitle:[NSString stringWithFormat:@"%d", comps.day] forState:UIControlStateNormal];
@@ -169,20 +173,20 @@
 }
 
 - (id)init {
-    return [self initWithStartDay:startSunday];
+    return [[self initWithStartDay:startSunday] retain];
 }
 
 - (id)initWithStartDay:(CKCalendarStartDay)firstDay {
-    return [self initWithStartDay:firstDay frame:CGRectMake(0, 0, 320, 320)];
+    return [[self initWithStartDay:firstDay frame:CGRectMake(0, 0, 320, 320)] retain];
 }
 
 - (void)_init:(CKCalendarStartDay)firstDay {
-    self.calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    self.calendar = [[[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar] retain];
     [self.calendar setLocale:[NSLocale currentLocale]];
 
     self.cellWidth = DEFAULT_CELL_WIDTH;
 
-    self.dateFormatter = [[NSDateFormatter alloc] init];
+    self.dateFormatter = [[[NSDateFormatter alloc] init] retain];
     [self.dateFormatter setTimeStyle:NSDateFormatterNoStyle];
     self.dateFormatter.dateFormat = @"LLLL yyyy";
 
@@ -192,52 +196,52 @@
 
     self.layer.cornerRadius = 6.0f;
 
-    UIView *highlight = [[UIView alloc] initWithFrame:CGRectZero];
+    UIView *highlight = [[[UIView alloc] initWithFrame:CGRectZero] retain];
     highlight.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.2];
     highlight.layer.cornerRadius = 6.0f;
     [self addSubview:highlight];
     self.highlight = highlight;
 
     // SET UP THE HEADER
-    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectZero];
+    UILabel *titleLabel = [[[UILabel alloc] initWithFrame:CGRectZero] retain];
     titleLabel.textAlignment = NSTextAlignmentCenter;
     titleLabel.backgroundColor = [UIColor clearColor];
     titleLabel.autoresizingMask = UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleWidth;
     [self addSubview:titleLabel];
     self.titleLabel = titleLabel;
 
-    UIButton *prevButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    UIButton *prevButton = [[UIButton buttonWithType:UIButtonTypeCustom] retain];
     [prevButton setImage:[UIImage imageNamed:@"left_arrow.png"] forState:UIControlStateNormal];
     prevButton.autoresizingMask = UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleRightMargin;
     [prevButton addTarget:self action:@selector(_moveCalendarToPreviousMonth) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:prevButton];
-    self.prevButton = prevButton;
+    self.prevButton = [prevButton retain];
 
-    UIButton *nextButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    UIButton *nextButton = [[UIButton buttonWithType:UIButtonTypeCustom] retain];
     [nextButton setImage:[UIImage imageNamed:@"right_arrow.png"] forState:UIControlStateNormal];
     nextButton.autoresizingMask = UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleLeftMargin;
     [nextButton addTarget:self action:@selector(_moveCalendarToNextMonth) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:nextButton];
-    self.nextButton = nextButton;
+    self.nextButton = [nextButton retain];
 
     // THE CALENDAR ITSELF
-    UIView *calendarContainer = [[UIView alloc] initWithFrame:CGRectZero];
+    UIView *calendarContainer = [[[UIView alloc] initWithFrame:CGRectZero] retain];
     calendarContainer.layer.borderWidth = 1.0f;
     calendarContainer.layer.borderColor = [UIColor blackColor].CGColor;
     calendarContainer.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleWidth;
     calendarContainer.layer.cornerRadius = 4.0f;
     calendarContainer.clipsToBounds = YES;
     [self addSubview:calendarContainer];
-    self.calendarContainer = calendarContainer;
+    self.calendarContainer = [calendarContainer retain];
 
-    GradientView *daysHeader = [[GradientView alloc] initWithFrame:CGRectZero];
+    GradientView *daysHeader = [[[GradientView alloc] initWithFrame:CGRectZero] retain];
     daysHeader.autoresizingMask = UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleWidth;
     [self.calendarContainer addSubview:daysHeader];
-    self.daysHeader = daysHeader;
+    self.daysHeader = [daysHeader retain];
 
     NSMutableArray *labels = [NSMutableArray array];
     for (int i = 0; i < 7; ++i) {
-        UILabel *dayOfWeekLabel = [[UILabel alloc] initWithFrame:CGRectZero];
+        UILabel *dayOfWeekLabel = [[[UILabel alloc] initWithFrame:CGRectZero] retain];
         dayOfWeekLabel.textAlignment = NSTextAlignmentCenter;
         dayOfWeekLabel.backgroundColor = [UIColor clearColor];
         dayOfWeekLabel.shadowColor = [UIColor whiteColor];
@@ -245,21 +249,21 @@
         [labels addObject:dayOfWeekLabel];
         [self.calendarContainer addSubview:dayOfWeekLabel];
     }
-    self.dayOfWeekLabels = labels;
+    self.dayOfWeekLabels = [labels retain];
     [self _updateDayOfWeekLabels];
 
     // at most we'll need 42 buttons, so let's just bite the bullet and make them now...
     NSMutableArray *dateButtons = [NSMutableArray array];
     for (NSInteger i = 1; i <= 42; i++) {
-        DateButton *dateButton = [DateButton buttonWithType:UIButtonTypeCustom];
+        DateButton *dateButton = [[DateButton buttonWithType:UIButtonTypeCustom] retain];
         dateButton.calendar = self.calendar;
         [dateButton addTarget:self action:@selector(_dateButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
         [dateButtons addObject:dateButton];
     }
-    self.dateButtons = dateButtons;
+    self.dateButtons = [dateButtons retain];
 
     // initialize the thing
-    self.monthShowing = [NSDate date];
+    self.monthShowing = [[NSDate date] retain];
     [self _setDefaultStyle];
     
     [self layoutSubviews]; // TODO: this is a hack to get the first month to show properly
@@ -270,11 +274,11 @@
     if (self) {
         [self _init:firstDay];
     }
-    return self;
+    return [self retain];
 }
 
 - (id)initWithFrame:(CGRect)frame {
-    return [self initWithStartDay:startSunday frame:frame];
+    return [[self initWithStartDay:startSunday frame:frame] retain];
 }
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
@@ -282,7 +286,7 @@
     if (self) {
         [self _init:startSunday];
     }
-    return self;
+    return [self retain];
 }
 
 - (void)layoutSubviews {
@@ -331,7 +335,7 @@
 
     NSDate *endDate = [self _firstDayOfNextMonthContainingDate:self.monthShowing];
     if (!self.onlyShowCurrentMonth) {
-        NSDateComponents *comps = [[NSDateComponents alloc] init];
+        NSDateComponents *comps = [[[NSDateComponents alloc] init] autorelease];
         [comps setWeek:numberOfWeeksToShow];
         endDate = [self.calendar dateByAddingComponents:comps toDate:date options:0];
     }
@@ -419,7 +423,7 @@
 }
 
 - (void)setMonthShowing:(NSDate *)aMonthShowing {
-    _monthShowing = [self _firstDayOfMonthContainingDate:aMonthShowing];
+    _monthShowing = [[self _firstDayOfMonthContainingDate:aMonthShowing] retain];
     [self setNeedsLayout];
 }
 
@@ -441,7 +445,7 @@
     if (date) {
         [datesToReload addObject:date];
     }
-    self.selectedDate = date;
+    self.selectedDate = date ;
     [self reloadDates:datesToReload];
     if (visible && date) {
         self.monthShowing = date;
@@ -512,8 +516,6 @@
 - (void)_dateButtonPressed:(id)sender {
     DateButton *dateButton = sender;
     NSDate *date = dateButton.date;
-    NSLog(@"%@", date);
-
     if ([date isEqualToDate:self.selectedDate]) {
         // deselection..
         if ([self.delegate respondsToSelector:@selector(calendar:willDeselectDate:)] && ![self.delegate calendar:self willDeselectDate:date]) {
@@ -694,7 +696,7 @@
     UIImage *coloredImg = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
 
-    return coloredImg;
+    return [coloredImg retain];
 }
 
 @end
