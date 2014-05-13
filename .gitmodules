@@ -1,0 +1,3 @@
+[submodule "TaskScheduler/IDPKit"]
+	path = TaskScheduler/IDPKit
+	url = https://github.com/idapgroup/IDPKit
