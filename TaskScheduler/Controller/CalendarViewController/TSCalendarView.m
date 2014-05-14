@@ -7,30 +7,28 @@
 //
 
 #import "TSCalendarView.h"
+#import "CKCalendarView.h"
 
 @implementation TSCalendarView
-
-#pragma mark -
-#pragma mark Initializations and Deallocations
-
-- (void)dealloc {
-    self.calendar = nil;
-    
-    [super dealloc];
-}
 
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
+        // Initialization code
     }
     return self;
 }
 
-#pragma mark -
-#pragma mark View Lifecycle
+/*
+ // Only override drawRect: if you perform custom drawing.
+ // An empty implementation adversely affects performance during animation.
+ - (void)drawRect:(CGRect)rect
+ {
+ // Drawing code
+ }
+ */
 
-<<<<<<< HEAD:TaskScheduler/Controller/CalendarViewController/TSCalendarView.m
 - (void)awakeFromNib {
     CKCalendarView *calendar = self.calendar;
     
@@ -41,8 +39,19 @@
     [calendar setDayOfWeekBottomColor:[UIColor blackColor] topColor:[UIColor darkGrayColor]];
     calendar.dayOfWeekTextColor = [UIColor whiteColor];
     calendar.backgroundColor = [UIColor blackColor];
+    //    [self.view addSubview:calendar];
+    
+    //    self.dateLabel = [[[UILabel alloc] initWithFrame:CGRectMake(10, CGRectGetMaxY(calendar.frame) + 4, self.view.bounds.size.width, 24)] autorelease];
+    //    [self.view addSubview:self.dateLabel];
+    
+    //    self.view.backgroundColor = [UIColor whiteColor];
+    
+    //    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(localeDidChange) name:NSCurrentLocaleDidChangeNotification object:nil];
+    
 }
 
-=======
->>>>>>> parent of 38fc842... Convert CKCalendar FROM ARC to NON ARC:TaskScheduler/CalendarViewController/TSCalendarView.m
+- (void)dealloc {
+    [_calendar release];
+    [super dealloc];
+}
 @end
