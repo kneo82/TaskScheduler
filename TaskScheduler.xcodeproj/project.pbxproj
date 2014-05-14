@@ -359,7 +359,7 @@
 				550BACA61921EFB7001F393D /* TSAppDelegate.m */,
 				550BACAB1921EFB7001F393D /* Images.xcassets */,
 				550BACA81921EFB7001F393D /* TaskScheduler.xcdatamodeld */,
-				550BADE019220E5E001F393D /* CalendarViewController */,
+				551070151923326E009A2A6E /* Controller */,
 				550BACCC1921F29A001F393D /* Category */,
 				550BAC9D1921EFB7001F393D /* Supporting Files */,
 			);
@@ -820,6 +820,14 @@
 				550BADE7192210A6001F393D /* TSCalendarView.m */,
 			);
 			path = CalendarViewController;
+			sourceTree = "<group>";
+		};
+		551070151923326E009A2A6E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				550BADE019220E5E001F393D /* CalendarViewController */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
