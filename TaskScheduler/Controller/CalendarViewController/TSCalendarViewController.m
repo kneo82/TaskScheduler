@@ -18,7 +18,6 @@
 @property(nonatomic, retain) NSDateFormatter *dateFormatter;
 @property(nonatomic, retain) NSDate *minimumDate;
 @property(nonatomic, retain) NSArray *disabledDates;
-@property(nonatomic, retain) CKCalendarView *calendar;
 
 @end
 
@@ -50,6 +49,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+//    self.calendarView.calendarView.de
 }
 
 - (void)localeDidChange {
