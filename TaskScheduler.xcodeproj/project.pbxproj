@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		55011B781923608B00D0B7A3 /* TSTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 55011B771923608B00D0B7A3 /* TSTask.m */; };
+		55011B7B1923608C00D0B7A3 /* TSRuleType.m in Sources */ = {isa = PBXBuildFile; fileRef = 55011B7A1923608C00D0B7A3 /* TSRuleType.m */; };
 		550BAC951921EFB7001F393D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 550BAC941921EFB7001F393D /* Foundation.framework */; };
 		550BAC971921EFB7001F393D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 550BAC961921EFB7001F393D /* CoreGraphics.framework */; };
 		550BAC991921EFB7001F393D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 550BAC981921EFB7001F393D /* UIKit.framework */; };
@@ -120,6 +122,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		55011B761923608B00D0B7A3 /* TSTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSTask.h; sourceTree = "<group>"; };
+		55011B771923608B00D0B7A3 /* TSTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSTask.m; sourceTree = "<group>"; };
+		55011B791923608C00D0B7A3 /* TSRuleType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSRuleType.h; sourceTree = "<group>"; };
+		55011B7A1923608C00D0B7A3 /* TSRuleType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSRuleType.m; sourceTree = "<group>"; };
 		550BAC911921EFB7001F393D /* TaskScheduler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaskScheduler.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		550BAC941921EFB7001F393D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		550BAC961921EFB7001F393D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -318,6 +324,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		55011B74192351CE00D0B7A3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				550BACA81921EFB7001F393D /* TaskScheduler.xcdatamodeld */,
+				55011B791923608C00D0B7A3 /* TSRuleType.h */,
+				55011B7A1923608C00D0B7A3 /* TSRuleType.m */,
+				55011B761923608B00D0B7A3 /* TSTask.h */,
+				55011B771923608B00D0B7A3 /* TSTask.m */,
+				55011B7519235B5400D0B7A3 /* Contexts */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		55011B7519235B5400D0B7A3 /* Contexts */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Contexts;
+			sourceTree = "<group>";
+		};
 		550BAC881921EFB7001F393D = {
 			isa = PBXGroup;
 			children = (
@@ -358,7 +384,7 @@
 				550BACA51921EFB7001F393D /* TSAppDelegate.h */,
 				550BACA61921EFB7001F393D /* TSAppDelegate.m */,
 				550BACAB1921EFB7001F393D /* Images.xcassets */,
-				550BACA81921EFB7001F393D /* TaskScheduler.xcdatamodeld */,
+				55011B74192351CE00D0B7A3 /* Models */,
 				551070151923326E009A2A6E /* Controller */,
 				550BACCC1921F29A001F393D /* Category */,
 				550BAC9D1921EFB7001F393D /* Supporting Files */,
@@ -960,6 +986,7 @@
 				550BACAA1921EFB7001F393D /* TaskScheduler.xcdatamodeld in Sources */,
 				550BADBB1921F55C001F393D /* IDPNetworkReachability.m in Sources */,
 				550BADCA1921F55C001F393D /* UIViewController+IDPInitialization.m in Sources */,
+				55011B7B1923608C00D0B7A3 /* TSRuleType.m in Sources */,
 				550BADB01921F55C001F393D /* IDPStackArray.m in Sources */,
 				550BAD951921F55C001F393D /* NSFileManager+IDPExtensions.m in Sources */,
 				550BADB11921F55C001F393D /* IDPURLConnection.m in Sources */,
@@ -992,6 +1019,7 @@
 				550BADB31921F55C001F393D /* IDPWeakArray.m in Sources */,
 				550BACA71921EFB7001F393D /* TSAppDelegate.m in Sources */,
 				550BADA21921F55C001F393D /* IDPSingletonModel.m in Sources */,
+				55011B781923608B00D0B7A3 /* TSTask.m in Sources */,
 				550BAD8A1921F55C001F393D /* NSManagedObjectContext+IDPExtensions.m in Sources */,
 				550BADAA1921F55C001F393D /* NSObject+IDPOCExtensionsPrivate.m in Sources */,
 				550BADA01921F55C001F393D /* IDPMachTimer.m in Sources */,
@@ -1224,6 +1252,7 @@
 				550BACC51921EFB7001F393D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		550BACC61921EFB7001F393D /* Build configuration list for PBXNativeTarget "TaskSchedulerTests" */ = {
 			isa = XCConfigurationList;
@@ -1232,6 +1261,7 @@
 				550BACC81921EFB7001F393D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
@@ -1242,7 +1272,8 @@
 				550BACA91921EFB7001F393D /* TaskScheduler.xcdatamodel */,
 			);
 			currentVersion = 550BACA91921EFB7001F393D /* TaskScheduler.xcdatamodel */;
-			path = TaskScheduler.xcdatamodeld;
+			name = TaskScheduler.xcdatamodeld;
+			path = ../TaskScheduler.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

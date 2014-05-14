@@ -18,7 +18,7 @@
 @property(nonatomic, retain) NSDateFormatter *dateFormatter;
 @property(nonatomic, retain) NSDate *minimumDate;
 @property(nonatomic, retain) NSArray *disabledDates;
-@property(nonatomic, retain) CKCalendarView *calendar;
+//@property(nonatomic, retain) CKCalendarView *calendar;
 
 @end
 
@@ -50,10 +50,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.calendarView.calendar.delegate = self;
+    NSLog(@"Configure %@", self.calendarView.calendar.datesShowing);
 }
 
 - (void)localeDidChange {
-    [self.calendar setLocale:[NSLocale currentLocale]];
+    [self.calendarView.calendar setLocale:[NSLocale currentLocale]];
 }
 
 #pragma mark -
@@ -78,12 +81,18 @@ IDPViewControllerViewOfClassGetterSynthesize(TSCalendarView, calendarView);
 
 - (void)calendar:(CKCalendarView *)calendar configureDateItem:(CKDateItem *)dateItem forDate:(NSDate *)date {
     // TODO: play with the coloring if we want to...
-    //    NSLog(@"Configure %@", date);
+//    NSLog(@"Configure %@", dateItem);
+    
     if ([self dateIsDisabled:date]) {
         dateItem.backgroundColor = [UIColor redColor];
         dateItem.textColor = [UIColor whiteColor];
     }
 }
+
+//- (BOOL)calendar:(CKCalendarView *)calendar didChangeToMonth:(NSDate *)date {
+//    NSLog(@"Configure %@", calendar.datesShowing);
+//    return YES;
+//}
 
 - (BOOL)calendar:(CKCalendarView *)calendar willSelectDate:(NSDate *)date {
     return ![self dateIsDisabled:date];
@@ -91,16 +100,6 @@ IDPViewControllerViewOfClassGetterSynthesize(TSCalendarView, calendarView);
 
 - (void)calendar:(CKCalendarView *)calendar didSelectDate:(NSDate *)date {
     self.dateLabel.text = [self.dateFormatter stringFromDate:date];
-}
-
-- (BOOL)calendar:(CKCalendarView *)calendar willChangeToMonth:(NSDate *)date {
-    if ([date laterDate:self.minimumDate] == date) {
-        self.calendar.backgroundColor = [UIColor blueColor];
-        return YES;
-    } else {
-        self.calendar.backgroundColor = [UIColor redColor];
-        return NO;
-    }
 }
 
 - (void)calendar:(CKCalendarView *)calendar didLayoutInRect:(CGRect)frame {

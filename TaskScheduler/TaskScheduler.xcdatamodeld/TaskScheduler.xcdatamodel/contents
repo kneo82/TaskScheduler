@@ -1,4 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="Test1.xcdatamodel" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <elements/>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3401" systemVersion="12F45" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="TSRuleType" representedClassName="TSRuleType" syncable="YES">
+        <attribute name="ruleName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="ruleType" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="tasksSet" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="TSTask" inverseName="ruleType" inverseEntity="TSTask" syncable="YES"/>
+    </entity>
+    <entity name="TSTask" representedClassName="TSTask" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="ruleType" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TSRuleType" inverseName="tasksSet" inverseEntity="TSRuleType" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="TSTask" positionX="-1370" positionY="3861" width="128" height="88"/>
+        <element name="TSRuleType" positionX="-1145" positionY="3863" width="128" height="88"/>
+    </elements>
 </model>
