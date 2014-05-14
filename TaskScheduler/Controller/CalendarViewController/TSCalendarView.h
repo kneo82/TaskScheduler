@@ -11,7 +11,6 @@
 @class CKCalendarView;
 
 @interface TSCalendarView : UIView
-
-@property (retain, nonatomic) IBOutlet CKCalendarView *calendar;
+@property (nonatomic, retain) IBOutlet CKCalendarView *calendar;
 
 @end

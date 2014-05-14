@@ -7,7 +7,6 @@
 //
 
 #import "TSCalendarView.h"
-#import "CKCalendarView.h"
 
 @implementation TSCalendarView
 
@@ -31,6 +30,7 @@
 #pragma mark -
 #pragma mark View Lifecycle
 
+<<<<<<< HEAD:TaskScheduler/Controller/CalendarViewController/TSCalendarView.m
 - (void)awakeFromNib {
     CKCalendarView *calendar = self.calendar;
     
@@ -43,4 +43,6 @@
     calendar.backgroundColor = [UIColor blackColor];
 }
 
+=======
+>>>>>>> parent of 38fc842... Convert CKCalendar FROM ARC to NON ARC:TaskScheduler/CalendarViewController/TSCalendarView.m
 @end
