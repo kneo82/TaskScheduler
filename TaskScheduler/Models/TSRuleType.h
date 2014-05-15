@@ -13,7 +13,6 @@
 
 @interface TSRuleType : NSManagedObject
 @property (nonatomic, retain) NSString  *ruleType;
-@property (nonatomic, retain) NSString  *ruleName;
 @property (nonatomic, retain) NSSet     *tasksSet;
 @property (nonatomic, retain) NSArray   *tasks;
 

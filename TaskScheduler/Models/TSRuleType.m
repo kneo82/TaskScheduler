@@ -16,7 +16,6 @@ static NSString * const kTSTasks = @"tasksSet";
 @implementation TSRuleType
 
 @dynamic ruleType;
-@dynamic ruleName;
 @dynamic tasks;
 @dynamic tasksSet;
 

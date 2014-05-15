@@ -50,10 +50,10 @@
     
     NSArray *tasks = [context executeFetchRequest:request error:nil];
     
-    TSTask *task1 = tasks[0];
-    NSDate *date = task1.date;
-    
-    NSLog(@"%@", task1.ruleType.ruleName);
+//    TSTask *task1 = tasks[0];
+//    NSDate *date = task1.date;
+//    
+//    NSLog(@"%@", task1.ruleType.ruleName);
     
     return tasks;
 }
