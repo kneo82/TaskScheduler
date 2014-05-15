@@ -109,6 +109,12 @@
 		550BADE419220EE2001F393D /* TSCalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 550BADE219220EE2001F393D /* TSCalendarViewController.m */; };
 		550BADE519220EE2001F393D /* TSCalendarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 550BADE319220EE2001F393D /* TSCalendarViewController.xib */; };
 		550BADE8192210A6001F393D /* TSCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 550BADE7192210A6001F393D /* TSCalendarView.m */; };
+		5582D8011924917700A2C921 /* TSFindTasks.m in Sources */ = {isa = PBXBuildFile; fileRef = 5582D8001924917700A2C921 /* TSFindTasks.m */; };
+		5582D8041924931A00A2C921 /* TSTaskRule.m in Sources */ = {isa = PBXBuildFile; fileRef = 5582D8031924931A00A2C921 /* TSTaskRule.m */; };
+		5582D8071924933000A2C921 /* TSRuleOnceDay.m in Sources */ = {isa = PBXBuildFile; fileRef = 5582D8061924933000A2C921 /* TSRuleOnceDay.m */; };
+		5582D80A1924934300A2C921 /* TSRuleOnceWeek.m in Sources */ = {isa = PBXBuildFile; fileRef = 5582D8091924934300A2C921 /* TSRuleOnceWeek.m */; };
+		5582D80D192493D100A2C921 /* TSRuleOnceMonth.m in Sources */ = {isa = PBXBuildFile; fileRef = 5582D80C192493D100A2C921 /* TSRuleOnceMonth.m */; };
+		5582D810192493EB00A2C921 /* TSRuleOnceYear.m in Sources */ = {isa = PBXBuildFile; fileRef = 5582D80F192493EB00A2C921 /* TSRuleOnceYear.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -296,6 +302,18 @@
 		550BADE319220EE2001F393D /* TSCalendarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TSCalendarViewController.xib; sourceTree = "<group>"; };
 		550BADE6192210A6001F393D /* TSCalendarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSCalendarView.h; sourceTree = "<group>"; };
 		550BADE7192210A6001F393D /* TSCalendarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSCalendarView.m; sourceTree = "<group>"; };
+		5582D7FF1924917700A2C921 /* TSFindTasks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSFindTasks.h; sourceTree = "<group>"; };
+		5582D8001924917700A2C921 /* TSFindTasks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSFindTasks.m; sourceTree = "<group>"; };
+		5582D8021924931A00A2C921 /* TSTaskRule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSTaskRule.h; sourceTree = "<group>"; };
+		5582D8031924931A00A2C921 /* TSTaskRule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSTaskRule.m; sourceTree = "<group>"; };
+		5582D8051924933000A2C921 /* TSRuleOnceDay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSRuleOnceDay.h; sourceTree = "<group>"; };
+		5582D8061924933000A2C921 /* TSRuleOnceDay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSRuleOnceDay.m; sourceTree = "<group>"; };
+		5582D8081924934300A2C921 /* TSRuleOnceWeek.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSRuleOnceWeek.h; sourceTree = "<group>"; };
+		5582D8091924934300A2C921 /* TSRuleOnceWeek.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSRuleOnceWeek.m; sourceTree = "<group>"; };
+		5582D80B192493D100A2C921 /* TSRuleOnceMonth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSRuleOnceMonth.h; sourceTree = "<group>"; };
+		5582D80C192493D100A2C921 /* TSRuleOnceMonth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSRuleOnceMonth.m; sourceTree = "<group>"; };
+		5582D80E192493EB00A2C921 /* TSRuleOnceYear.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSRuleOnceYear.h; sourceTree = "<group>"; };
+		5582D80F192493EB00A2C921 /* TSRuleOnceYear.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSRuleOnceYear.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -340,6 +358,18 @@
 		55011B7519235B5400D0B7A3 /* Contexts */ = {
 			isa = PBXGroup;
 			children = (
+				5582D7FF1924917700A2C921 /* TSFindTasks.h */,
+				5582D8001924917700A2C921 /* TSFindTasks.m */,
+				5582D8021924931A00A2C921 /* TSTaskRule.h */,
+				5582D8031924931A00A2C921 /* TSTaskRule.m */,
+				5582D8051924933000A2C921 /* TSRuleOnceDay.h */,
+				5582D8061924933000A2C921 /* TSRuleOnceDay.m */,
+				5582D8081924934300A2C921 /* TSRuleOnceWeek.h */,
+				5582D8091924934300A2C921 /* TSRuleOnceWeek.m */,
+				5582D80B192493D100A2C921 /* TSRuleOnceMonth.h */,
+				5582D80C192493D100A2C921 /* TSRuleOnceMonth.m */,
+				5582D80E192493EB00A2C921 /* TSRuleOnceYear.h */,
+				5582D80F192493EB00A2C921 /* TSRuleOnceYear.m */,
 			);
 			path = Contexts;
 			sourceTree = "<group>";
@@ -987,12 +1017,15 @@
 				550BADBB1921F55C001F393D /* IDPNetworkReachability.m in Sources */,
 				550BADCA1921F55C001F393D /* UIViewController+IDPInitialization.m in Sources */,
 				55011B7B1923608C00D0B7A3 /* TSRuleType.m in Sources */,
+				5582D80A1924934300A2C921 /* TSRuleOnceWeek.m in Sources */,
 				550BADB01921F55C001F393D /* IDPStackArray.m in Sources */,
 				550BAD951921F55C001F393D /* NSFileManager+IDPExtensions.m in Sources */,
 				550BADB11921F55C001F393D /* IDPURLConnection.m in Sources */,
 				550BADC21921F55C001F393D /* UIColor+IDPExtensions.m in Sources */,
 				550BADA11921F55C001F393D /* IDPModel.m in Sources */,
 				550BADAF1921F55C001F393D /* IDPRetainingDictionary.m in Sources */,
+				5582D8071924933000A2C921 /* TSRuleOnceDay.m in Sources */,
+				5582D8041924931A00A2C921 /* TSTaskRule.m in Sources */,
 				550BADC81921F55C001F393D /* UIView+IDPExtensions.m in Sources */,
 				550BADDA192207E5001F393D /* CKCalendarView.m in Sources */,
 				550BAD9C1921F55C001F393D /* IDPBufferArray.m in Sources */,
@@ -1018,15 +1051,18 @@
 				550BAD891921F55C001F393D /* NSManagedObject+IDPExtensions.m in Sources */,
 				550BADB31921F55C001F393D /* IDPWeakArray.m in Sources */,
 				550BACA71921EFB7001F393D /* TSAppDelegate.m in Sources */,
+				5582D810192493EB00A2C921 /* TSRuleOnceYear.m in Sources */,
 				550BADA21921F55C001F393D /* IDPSingletonModel.m in Sources */,
 				55011B781923608B00D0B7A3 /* TSTask.m in Sources */,
 				550BAD8A1921F55C001F393D /* NSManagedObjectContext+IDPExtensions.m in Sources */,
 				550BADAA1921F55C001F393D /* NSObject+IDPOCExtensionsPrivate.m in Sources */,
 				550BADA01921F55C001F393D /* IDPMachTimer.m in Sources */,
+				5582D8011924917700A2C921 /* TSFindTasks.m in Sources */,
 				550BADC41921F55C001F393D /* UIImage+IDPExtensions.m in Sources */,
 				550BAD9D1921F55C001F393D /* IDPKeyPathObserver.m in Sources */,
 				550BAD9F1921F55C001F393D /* IDPKVOMutableArray.m in Sources */,
 				550BAD941921F55C001F393D /* NSDateComponents+IDPExtinsions.m in Sources */,
+				5582D80D192493D100A2C921 /* TSRuleOnceMonth.m in Sources */,
 				550BADA91921F55C001F393D /* NSObject+IDPOCExtensions.m in Sources */,
 				550BADC71921F55C001F393D /* UITableView+IDPCellLoading.m in Sources */,
 				550BADAB1921F55C001F393D /* IDPObservableObject.m in Sources */,

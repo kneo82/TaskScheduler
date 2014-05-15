@@ -9,8 +9,12 @@
 #import "TSAppDelegate.h"
 #import "TSCalendarViewController.h"
 
+#import "IDPCoreDataManager.h"
+
 #import "UIWindow+TDExtensions.h"
 #import "UIViewController+IDPInitialization.h"
+
+static NSString * const kTSStoreName = @"TaskScheduler";
 
 @interface TSAppDelegate ()
 
@@ -35,9 +39,8 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [UIWindow window];
     UIWindow *window = self.window;
-    
   
-//    [IDPCoreDataManager sharedManagerWithMomName:kTDStoreName];
+    [IDPCoreDataManager sharedManagerWithMomName:kTSStoreName];
     
     TSCalendarViewController *calendarController = [TSCalendarViewController viewControllerWithDefaultNib];
     

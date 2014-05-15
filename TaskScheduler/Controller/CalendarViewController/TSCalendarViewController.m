@@ -52,7 +52,10 @@
     [super viewDidLoad];
     
     self.calendarView.calendar.delegate = self;
-    NSLog(@"Configure %@", self.calendarView.calendar.datesShowing);
+    
+    self.dateFormatter = [[[NSDateFormatter alloc] init] autorelease];
+    [self.dateFormatter setDateFormat:@"dd/MM/yyyy"];
+
 }
 
 - (void)localeDidChange {
@@ -95,6 +98,7 @@ IDPViewControllerViewOfClassGetterSynthesize(TSCalendarView, calendarView);
 //}
 
 - (BOOL)calendar:(CKCalendarView *)calendar willSelectDate:(NSDate *)date {
+    NSLog(@"%@",  [self.dateFormatter stringFromDate:date]);
     return ![self dateIsDisabled:date];
 }
 
