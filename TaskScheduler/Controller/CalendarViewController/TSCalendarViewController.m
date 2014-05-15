@@ -10,6 +10,7 @@
 #import "TSCalendarView.h"
 #import "CKCalendarView.h"
 
+#import "TSFindTasks.h"
 #import "UIViewController+IDPExtensions.h"
 
 @interface TSCalendarViewController () <CKCalendarDelegate>
@@ -56,6 +57,8 @@
     self.dateFormatter = [[[NSDateFormatter alloc] init] autorelease];
     [self.dateFormatter setDateFormat:@"dd/MM/yyyy"];
 
+    TSFindTasks *findTask = [[[TSFindTasks alloc] init] autorelease];
+    [findTask findTasks];
 }
 
 - (void)localeDidChange {

@@ -8,6 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
-@interface TSFindTasks : NSObject
+#import "IDPModel.h"
+
+@interface TSFindTasks : IDPModel
+@property (nonatomic, retain)   NSDate  *startDate;
+@property (nonatomic, retain)   NSDate  *endDate;
+
+- (void)findTasks;
 
 @end

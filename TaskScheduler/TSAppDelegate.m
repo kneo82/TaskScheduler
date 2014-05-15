@@ -10,9 +10,13 @@
 #import "TSCalendarViewController.h"
 
 #import "IDPCoreDataManager.h"
+#import "NSManagedObject+IDPExtensions.h"
 
 #import "UIWindow+TDExtensions.h"
 #import "UIViewController+IDPInitialization.h"
+
+#import "TSTask.h"
+#import "TSRuleType.h"
 
 static NSString * const kTSStoreName = @"TaskScheduler";
 
@@ -51,6 +55,43 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
     window.rootViewController = controller;
     window.backgroundColor = [UIColor whiteColor];
     [window makeKeyAndVisible];
+    
+    
+//    
+//    TSRuleType *ruleOnceDay = [TSRuleType managedObject];
+//    ruleOnceDay.ruleName = @"Once a Day";
+//    ruleOnceDay.ruleType = @"TSRuleOnceDay";
+//    
+//    TSRuleType *ruleOnceMonth = [TSRuleType managedObject];
+//    ruleOnceMonth.ruleName = @"Once a Month";
+//    ruleOnceMonth.ruleType = @"TSRuleOnceNonth";
+//    
+//    TSRuleType *ruleOnceWeek = [TSRuleType managedObject];
+//    ruleOnceWeek.ruleName = @"Once a Week";
+//    ruleOnceWeek.ruleType = @"TSRuleOnceWeek";
+//    
+//    TSRuleType *ruleOnceYear = [TSRuleType managedObject];
+//    ruleOnceYear.ruleName = @"Once a Year";
+//    ruleOnceYear.ruleType = @"TSRuleOnceYear";
+//    
+//    TSTask *task1 = [TSTask managedObject];
+//    task1.date = [NSDate date];
+//    
+//    [ruleOnceYear addTask:task1];
+//    
+//    TSTask *task2 = [TSTask managedObject];
+//    task2.date =  [task1.date dateByAddingTimeInterval:24*60*60];
+//    
+//    [ruleOnceYear addTask:task2];
+//    
+//    TSTask *task3 = [TSTask managedObject];
+//    task3.date =  task2.date;
+//    [ruleOnceWeek addTask:task3];
+//    
+//    [ruleOnceYear saveManagedObject];
+//    [ruleOnceWeek saveManagedObject];
+//    [ruleOnceMonth saveManagedObject];
+//    [ruleOnceDay saveManagedObject];
     
     return YES;
 }
