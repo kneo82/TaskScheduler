@@ -87,7 +87,7 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 //    TSTask *task3 = [TSTask managedObject];
 //    task3.date =  task2.date;
 //    [ruleOnceWeek addTask:task3];
-//    
+//
 //    [ruleOnceYear saveManagedObject];
 //    [ruleOnceWeek saveManagedObject];
 //    [ruleOnceMonth saveManagedObject];
