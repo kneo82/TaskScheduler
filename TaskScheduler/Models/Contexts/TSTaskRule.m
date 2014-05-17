@@ -12,8 +12,14 @@
 #import "IDPPropertyMacros.h"
 
 #import "NSObject+IDPExtensions.h"
+#import "NSDate+IDPExtensions.h"
+#import "NSDateComponents+IDPExtinsions.h"
 
-//static const NSUInteger kTSRunitFlags = (NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit|NSHourCalendarUnit);
+static const NSUInteger kTSFirstDay = 1;
+@interface TSTaskRule ()
+@property (nonatomic, retain)     TSTask  *task;
+
+@end
 
 @implementation TSTaskRule
 
@@ -45,16 +51,9 @@
 #pragma mark -
 #pragma mark Accessors
 
-//- (void)setTask:(TSTask *)task {
-//    IDPNonatomicRetainPropertySynthesize(_task, task);
-//    
-//    self.currentDate = task.date;
-//}
-
-
 - (NSDate *)currentDate {
     if (!_currentDate) {
-        self.currentDate = self.task.date;
+        self.currentDate = [NSDate midnightDateForDate:self.task.date];
     }
     
     return _currentDate;
@@ -72,7 +71,66 @@
 }
 
 - (NSArray *)datesFromDate:(NSDate *)fromDate toDate:(NSDate *)toDate {
-    return nil;
+    if (NSOrderedDescending == [self.currentDate compare:toDate]
+        || NSOrderedDescending == [fromDate compare:toDate])
+    {
+        return nil;
+    }
+    
+    fromDate = [NSDate midnightDateForDate:fromDate];
+    toDate = [NSDate midnightDateForDate:toDate];
+
+    [self lastPreviewDateToDate:fromDate];
+    
+    NSMutableArray *dates = [NSMutableArray array];
+    
+    if ([self isCurrentDateBetwinStartDate:fromDate endDate:toDate]) {
+        [dates addObject:self.currentDate];
+    }
+    
+    while (NSOrderedAscending == [[self nextDate] compare:toDate]
+           || NSOrderedSame == [self.currentDate compare:toDate])
+    {
+        [dates addObject:self.currentDate];
+    }
+    
+    return [[dates copy] autorelease];
+}
+
+- (NSDate *)dateInCurrentMonthFromComponent:(NSDateComponents *)component {
+    component.day = kTSFirstDay;
+    
+    NSUInteger countDayInMonth = [NSDate numberOfDaysInMonthForDate:[component dateFromComponents]];
+    
+    if (self.task.date.day > countDayInMonth) {
+        component.day = countDayInMonth;
+    } else {
+        component.day = self.task.date.day;
+    }
+    
+    return [component dateFromComponents];
+}
+
+#pragma mark -
+#pragma mark Private
+
+- (NSDate *)lastPreviewDateToDate:(NSDate *)date {
+    while (NSOrderedAscending == [[self nextDate] compare:date]) {
+    }
+    
+    [self previewDate];
+    
+    return self.currentDate;
+}
+
+- (BOOL)isCurrentDateBetwinStartDate:(NSDate *)startDate endDate:(NSDate *)endDate {
+    NSDate *currentDate = self.currentDate;
+    
+    NSComparisonResult compareWithFromData = [currentDate compare:startDate];
+    NSComparisonResult compareWithToData = [currentDate compare:endDate];
+    
+    return ((NSOrderedDescending == compareWithFromData || NSOrderedSame == compareWithFromData)
+            && (NSOrderedAscending == compareWithToData || NSOrderedSame == compareWithToData));
 }
 
 @end

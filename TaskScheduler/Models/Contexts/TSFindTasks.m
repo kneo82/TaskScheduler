@@ -16,6 +16,7 @@
 #import "IDPCoreDataManager.h"
 
 #import "NSDate+IDPExtensions.h"
+#import "NSDateComponents+IDPExtinsions.h"
 
 @interface TSFindTasks ()
 @property (nonatomic, retain)   NSMutableDictionary  *tasks;
@@ -44,7 +45,7 @@
     ruleOnceDay.ruleType = @"TSRuleOnceDay";
     
     TSRuleType *ruleOnceMonth = [TSRuleType managedObject];
-    ruleOnceMonth.ruleType = @"TSRuleOnceNonth";
+    ruleOnceMonth.ruleType = @"TSRuleOnceMonth";
     
     TSRuleType *ruleOnceWeek = [TSRuleType managedObject];
     ruleOnceWeek.ruleType = @"TSRuleOnceWeek";
@@ -55,22 +56,32 @@
     TSTask *task1 = [TSTask managedObject];
     task1.date = [NSDate date];
     
-    [ruleOnceDay addTask:task1];
+    [ruleOnceYear addTask:task1];
     
     TSTask *task2 = [TSTask managedObject];
-    task2.date =  [task1.date dateByAddingTimeInterval:-10*24*60*60];
+    task2.date =  [task1.date dateByAddingTimeInterval:1*24*60*60];
     
-    [ruleOnceDay addTask:task2];
+    [ruleOnceYear addTask:task2];
     
     TSTask *task3 = [TSTask managedObject];
     task3.date =  task2.date;
     [ruleOnceWeek addTask:task3];
 
+    NSDateComponents *components = [task1.date components:(NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit)];
     
-    TSTaskRule *task = [TSTaskRule contextWithTask:task2] ;
+    components.day = 29;
+    components.month = 2;
+    components.year = 2012;
+    
+    task1.date = [components dateFromComponents];
+    
+    TSTaskRule *task = [TSTaskRule contextWithTask:task1] ;
+    
     NSLog(@"Current day %@", [task1.date dateToStringWithFormat:@"dd/MM/yyyy"]);
+    NSDate *toDate = [task1.date dateByAddingDays:366*20];
+    NSDate *fromDate = [task1.date dateByAddingDays:-365*5];//task1.date;
     
-    NSArray *array = [task datesFromDate:task1.date toDate:[task1.date dateByAddingTimeInterval:10*24*60*60]];
+    NSArray *array = [task datesFromDate:fromDate toDate:toDate];
     NSLog(@"Count dates = %d", array.count);
 }
 

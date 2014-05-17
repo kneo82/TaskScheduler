@@ -10,16 +10,17 @@
 
 @class TSTask;
 
-#define kTSRunitFlags (NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit|NSHourCalendarUnit)
+#define kTSRunitFlags (NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit)
 
 @interface TSTaskRule : NSObject
-@property (nonatomic, retain)   TSTask  *task;
-@property (nonatomic, retain)   NSDate  *currentDate;
+@property (nonatomic, readonly)     TSTask  *task;
+@property (nonatomic, retain)       NSDate  *currentDate;
 
 + (id)contextWithTask:(TSTask *)task;
 
 - (NSDate *)nextDate;
 - (NSDate *)previewDate;
 - (NSArray *)datesFromDate:(NSDate *)fromDate toDate:(NSDate *)toDate;
+- (NSDate *)dateInCurrentMonthFromComponent:(NSDateComponents *)component;
 
 @end

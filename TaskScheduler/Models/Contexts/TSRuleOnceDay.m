@@ -7,6 +7,8 @@
 //
 
 #import "TSRuleOnceDay.h"
+#import "TSTask.h"
+#import "TSRuleType.h"
 
 #import "NSDate+IDPExtensions.h"
 #import "NSDateComponents+IDPExtinsions.h"
@@ -17,59 +19,41 @@
 #pragma mark Public
 
 - (NSDate *)nextDate {
-    NSDateComponents *components = [self.currentDate components:kTSRunitFlags];
+    NSDate *currentDate = self.currentDate;
+    NSDate *taskDate = self.task.date;
+    
+    if (NSOrderedAscending == [currentDate compare:taskDate]) {
+        self.currentDate = taskDate;
+        
+        return taskDate;
+    }
+    
+    NSDateComponents *components = [currentDate components:kTSRunitFlags];
     components.day++;
     
     NSDate *dateNext = [components dateFromComponents];
     self.currentDate = dateNext;
-    
-    NSLog(@"Next Day -- %@", [dateNext dateToStringWithFormat:@"dd/MM/yyyy"]);
 
-    return self.currentDate;
+    return dateNext;
 }
 
 - (NSDate *)previewDate {
+    
     NSDateComponents *components = [self.currentDate components:kTSRunitFlags];
     components.day--;
     
-    NSDate *dateNext = [components dateFromComponents];
-    self.currentDate = dateNext;
+    NSDate *datePreview = [components dateFromComponents];
+    NSDate *taskDate = self.task.date;
     
-    NSLog(@"Preview Day -- %@", [dateNext dateToStringWithFormat:@"dd/MM/yyyy"]);
-    
-    return self.currentDate;
-}
-
-- (NSArray *)datesFromDate:(NSDate *)fromDate toDate:(NSDate *)toDate {
-    if (NSOrderedDescending == [self.currentDate compare:toDate]) {
+    if (NSOrderedAscending == [datePreview compare:taskDate]) {
+        self.currentDate = taskDate;
+        
         return nil;
     }
     
+    self.currentDate = datePreview;
     
-    
-    while (NSOrderedAscending == [[self nextDate] compare:fromDate]) {
-        
-    }
-    
-    [self previewDate];
-    
-    NSMutableArray *dates = [NSMutableArray array];
-    NSComparisonResult compareWithFromData = [self.currentDate compare:fromDate];
-    NSComparisonResult compareWithToData = [self.currentDate compare:toDate];
-    if (NSOrderedSame == compareWithFromData
-        || NSOrderedSame == compareWithToData
-        ||(NSOrderedDescending == compareWithFromData
-           && NSOrderedAscending == compareWithToData))
-    {
-        [dates addObject:self.currentDate];
-    }
-    
-    while (NSOrderedAscending == [[self nextDate] compare:toDate]) {
-        NSLog(@"Add date");
-        [dates addObject:self.currentDate];
-    }
-    
-    return [[dates copy] autorelease];
+    return datePreview;
 }
 
 @end
