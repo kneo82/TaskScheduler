@@ -19,7 +19,6 @@
 #import "NSDateComponents+IDPExtinsions.h"
 
 @interface TSFindTasks ()
-@property (nonatomic, retain)   NSMutableDictionary  *tasks;
 
 @end
 
@@ -31,7 +30,7 @@
 - (void)dealloc {
     self.startDate = nil;
     self.endDate = nil;
-    self.tasks = nil;
+    self.tasksWithDates = nil;
     
     [super dealloc];
 }
@@ -40,49 +39,27 @@
 #pragma mark Public
 
 - (void)findTasks {
-//    [self fetchTasks];
-    TSRuleType *ruleOnceDay = [TSRuleType managedObject];
-    ruleOnceDay.ruleType = @"TSRuleOnceDay";
-    
-    TSRuleType *ruleOnceMonth = [TSRuleType managedObject];
-    ruleOnceMonth.ruleType = @"TSRuleOnceMonth";
-    
-    TSRuleType *ruleOnceWeek = [TSRuleType managedObject];
-    ruleOnceWeek.ruleType = @"TSRuleOnceWeek";
-    
-    TSRuleType *ruleOnceYear = [TSRuleType managedObject];
-    ruleOnceYear.ruleType = @"TSRuleOnceYear";
-    
-    TSTask *task1 = [TSTask managedObject];
-    task1.date = [NSDate date];
-    
-    [ruleOnceYear addTask:task1];
-    
-    TSTask *task2 = [TSTask managedObject];
-    task2.date =  [task1.date dateByAddingTimeInterval:1*24*60*60];
-    
-    [ruleOnceYear addTask:task2];
-    
-    TSTask *task3 = [TSTask managedObject];
-    task3.date =  task2.date;
-    [ruleOnceWeek addTask:task3];
+    [self load];
+}
 
-    NSDateComponents *components = [task1.date components:(NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit)];
+- (BOOL)load {
+    if (![super load]) {
+        return NO;
+    }
     
-    components.day = 29;
-    components.month = 2;
-    components.year = 2012;
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+        [self tasksInCurrentDataRange];
+    });
     
-    task1.date = [components dateFromComponents];
+    return YES;
+}
+
+- (void)cancel {
+    self.startDate = nil;
+    self.endDate = nil;
+    self.tasksWithDates = nil;
     
-    TSTaskRule *task = [TSTaskRule contextWithTask:task1] ;
-    
-    NSLog(@"Current day %@", [task1.date dateToStringWithFormat:@"dd/MM/yyyy"]);
-    NSDate *toDate = [task1.date dateByAddingDays:366*20];
-    NSDate *fromDate = [task1.date dateByAddingDays:-365*5];//task1.date;
-    
-    NSArray *array = [task datesFromDate:fromDate toDate:toDate];
-    NSLog(@"Count dates = %d", array.count);
+    [super cancel];
 }
 
 #pragma mark -
@@ -91,19 +68,56 @@
 - (NSArray *)fetchTasks {
     IDPCoreDataManager *manager = [IDPCoreDataManager sharedManager];
     NSManagedObjectContext *context = manager.managedObjectContext;
+    NSString *entetyName = NSStringFromClass([TSTask class]);
     
-    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:NSStringFromClass([TSTask class])];
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:entetyName];
     NSError *error;
     
     NSArray *tasks = [context executeFetchRequest:request error:&error];
     
-    if (!error) {
-        NSLog(@"Work with Task");
-    } else {
+    if (error) {
         NSLog(@"Error : %@", error);
+        [self failLoading];
+        
+        return nil;
     }
     
     return tasks;
+}
+
+- (void)tasksInCurrentDataRange {
+    NSDate *startDate = self.startDate;
+    NSDate *endDate = self.endDate;
+    
+    if (!startDate || !endDate) {
+        [self failLoading];
+        return;
+    }
+    
+    NSMutableDictionary *tasksWithDates = [NSMutableDictionary dictionary];
+    
+    NSArray *tasks = [self fetchTasks];
+    
+    for (TSTask *task in tasks) {
+        TSTaskRule *rule = [[TSTaskRule contextWithTask:task] retain];
+        
+        NSArray *dates = [[rule datesFromDate:startDate toDate:endDate] retain];
+        
+        for (NSDate *date in dates) {
+            NSMutableArray *array = [tasksWithDates objectForKey:date];
+            
+            array = [NSMutableArray arrayWithArray:array];
+            [array addObject:task];
+            
+            [tasksWithDates setObject:array forKey:date];
+        }
+        [dates release];
+        [rule release];
+    }
+    
+    self.tasksWithDates = [tasksWithDates copy];
+    
+    [self finishLoading];
 }
 
 @end

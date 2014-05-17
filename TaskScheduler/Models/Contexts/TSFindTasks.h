@@ -13,6 +13,7 @@
 @interface TSFindTasks : IDPModel
 @property (nonatomic, retain)   NSDate  *startDate;
 @property (nonatomic, retain)   NSDate  *endDate;
+@property (nonatomic, retain)   NSDictionary *tasksWithDates;
 
 - (void)findTasks;
 

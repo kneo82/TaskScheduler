@@ -57,21 +57,21 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
     [window makeKeyAndVisible];
     
     
-//    
+    
 //    TSRuleType *ruleOnceDay = [TSRuleType managedObject];
-//    ruleOnceDay.ruleName = @"Once a Day";
+//
 //    ruleOnceDay.ruleType = @"TSRuleOnceDay";
 //    
 //    TSRuleType *ruleOnceMonth = [TSRuleType managedObject];
-//    ruleOnceMonth.ruleName = @"Once a Month";
-//    ruleOnceMonth.ruleType = @"TSRuleOnceNonth";
+//
+//    ruleOnceMonth.ruleType = @"TSRuleOnceMonth";
 //    
 //    TSRuleType *ruleOnceWeek = [TSRuleType managedObject];
-//    ruleOnceWeek.ruleName = @"Once a Week";
+//
 //    ruleOnceWeek.ruleType = @"TSRuleOnceWeek";
 //    
 //    TSRuleType *ruleOnceYear = [TSRuleType managedObject];
-//    ruleOnceYear.ruleName = @"Once a Year";
+//
 //    ruleOnceYear.ruleType = @"TSRuleOnceYear";
 //    
 //    TSTask *task1 = [TSTask managedObject];
@@ -92,7 +92,7 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 //    [ruleOnceWeek saveManagedObject];
 //    [ruleOnceMonth saveManagedObject];
 //    [ruleOnceDay saveManagedObject];
-    
+//    
     return YES;
 }
 

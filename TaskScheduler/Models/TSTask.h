@@ -11,7 +11,7 @@
 
 @class TSRuleType;
 
-@interface TSTask : NSManagedObject
+@interface TSTask : NSManagedObject 
 @property (nonatomic, retain) NSDate        *date;
 @property (nonatomic, retain) NSString      *title;
 @property (nonatomic, retain) TSRuleType    *ruleType;

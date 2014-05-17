@@ -71,6 +71,10 @@ static const NSUInteger kTSFirstDay = 1;
 }
 
 - (NSArray *)datesFromDate:(NSDate *)fromDate toDate:(NSDate *)toDate {
+    if (!fromDate || !toDate) {
+        return nil;
+    }
+    
     if (NSOrderedDescending == [self.currentDate compare:toDate]
         || NSOrderedDescending == [fromDate compare:toDate])
     {

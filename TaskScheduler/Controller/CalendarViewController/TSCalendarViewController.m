@@ -12,6 +12,8 @@
 
 #import "TSFindTasks.h"
 #import "UIViewController+IDPExtensions.h"
+#import "NSDate+IDPExtensions.h"
+#import "NSDateComponents+IDPExtinsions.h"
 
 @interface TSCalendarViewController () <CKCalendarDelegate>
 @property (nonatomic, readonly) TSCalendarView *calendarView;
@@ -58,7 +60,26 @@
     [self.dateFormatter setDateFormat:@"dd/MM/yyyy"];
 
     TSFindTasks *findTask = [[[TSFindTasks alloc] init] autorelease];
+    
+    NSDateComponents *components = [[NSDate date] components:(NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit)];
+    
+    components.day = 29;
+    components.month = 2;
+    components.year = 2012;
+    
+    NSDate *date1 = [components dateFromComponents];
+    
+    components.day = 17;
+    components.month = 5;
+    components.year = 2014;
+    NSDate *date2 = [components dateFromComponents];
+    
+    findTask.startDate = date1;
+    findTask.endDate = date2;
+    
+    [findTask addObserver:self];
     [findTask findTasks];
+    [findTask cancel];
 }
 
 - (void)localeDidChange {
@@ -111,6 +132,22 @@ IDPViewControllerViewOfClassGetterSynthesize(TSCalendarView, calendarView);
 
 - (void)calendar:(CKCalendarView *)calendar didLayoutInRect:(CGRect)frame {
     //    NSLog(@"calendar layout: %@", NSStringFromCGRect(frame));
+}
+
+#pragma mark -
+#pragma mark TDTaskCompletion
+
+- (void)modelDidLoad:(id)object {
+    TSFindTasks *task = object;
+    NSLog(@"******Dates & Event **********\n\n%@", task.tasksWithDates);
+}
+
+- (void)modelDidCancelLoading:(id)theModel {
+    NSLog(@"****** Cancel **********\n\n");
+}
+
+- (void)modelDidFailToLoad:(id)model {
+    NSLog(@"****** Fail Load **********\n\n");
 }
 
 @end
