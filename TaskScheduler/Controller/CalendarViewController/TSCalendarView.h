@@ -7,10 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@class CKCalendarView;
+#import <ABCalendarPicker/ABCalendarPicker.h>
 
 @interface TSCalendarView : UIView
-@property (nonatomic, retain) IBOutlet CKCalendarView *calendar;
+@property (nonatomic, retain) IBOutlet ABCalendarPicker *calendar;
 
 @end

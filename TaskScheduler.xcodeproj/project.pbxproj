@@ -100,12 +100,6 @@
 		550BADC81921F55C001F393D /* UIView+IDPExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 550BAD7C1921F55C001F393D /* UIView+IDPExtensions.m */; };
 		550BADC91921F55C001F393D /* UIViewController+IDPExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 550BAD7E1921F55C001F393D /* UIViewController+IDPExtensions.m */; };
 		550BADCA1921F55C001F393D /* UIViewController+IDPInitialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 550BAD801921F55C001F393D /* UIViewController+IDPInitialization.m */; };
-		550BADDA192207E5001F393D /* CKCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 550BADD3192207E5001F393D /* CKCalendarView.m */; };
-		550BADDB192207E5001F393D /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 550BADD4192207E5001F393D /* README.md */; };
-		550BADDC192207E5001F393D /* left_arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 550BADD6192207E5001F393D /* left_arrow.png */; };
-		550BADDD192207E5001F393D /* left_arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 550BADD7192207E5001F393D /* left_arrow@2x.png */; };
-		550BADDE192207E5001F393D /* right_arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 550BADD8192207E5001F393D /* right_arrow.png */; };
-		550BADDF192207E5001F393D /* right_arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 550BADD9192207E5001F393D /* right_arrow@2x.png */; };
 		550BADE419220EE2001F393D /* TSCalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 550BADE219220EE2001F393D /* TSCalendarViewController.m */; };
 		550BADE519220EE2001F393D /* TSCalendarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 550BADE319220EE2001F393D /* TSCalendarViewController.xib */; };
 		550BADE8192210A6001F393D /* TSCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 550BADE7192210A6001F393D /* TSCalendarView.m */; };
@@ -115,6 +109,12 @@
 		5582D80A1924934300A2C921 /* TSRuleOnceWeek.m in Sources */ = {isa = PBXBuildFile; fileRef = 5582D8091924934300A2C921 /* TSRuleOnceWeek.m */; };
 		5582D80D192493D100A2C921 /* TSRuleOnceMonth.m in Sources */ = {isa = PBXBuildFile; fileRef = 5582D80C192493D100A2C921 /* TSRuleOnceMonth.m */; };
 		5582D810192493EB00A2C921 /* TSRuleOnceYear.m in Sources */ = {isa = PBXBuildFile; fileRef = 5582D80F192493EB00A2C921 /* TSRuleOnceYear.m */; };
+		55D7441A1928A0AF003B74AF /* ABCalendarPicker.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 55D743F71928A0AF003B74AF /* ABCalendarPicker.bundle */; };
+		55D7441B1928A0AF003B74AF /* ABCalendarPicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55D743F81928A0AF003B74AF /* ABCalendarPicker.framework */; };
+		55D7441C1928A0AF003B74AF /* libABCalendarPicker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 55D744071928A0AF003B74AF /* libABCalendarPicker.a */; };
+		55D7441D1928A0AF003B74AF /* ABCalendarPicker.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 55D744091928A0AF003B74AF /* ABCalendarPicker.bundle */; };
+		55D7441E1928A0AF003B74AF /* ABCalendarPicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55D7440A1928A0AF003B74AF /* ABCalendarPicker.framework */; };
+		55D7441F1928A0AF003B74AF /* libABCalendarPicker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 55D744191928A0AF003B74AF /* libABCalendarPicker.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -290,13 +290,6 @@
 		550BAD7E1921F55C001F393D /* UIViewController+IDPExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+IDPExtensions.m"; sourceTree = "<group>"; };
 		550BAD7F1921F55C001F393D /* UIViewController+IDPInitialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+IDPInitialization.h"; sourceTree = "<group>"; };
 		550BAD801921F55C001F393D /* UIViewController+IDPInitialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+IDPInitialization.m"; sourceTree = "<group>"; };
-		550BADD2192207E5001F393D /* CKCalendarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKCalendarView.h; sourceTree = "<group>"; };
-		550BADD3192207E5001F393D /* CKCalendarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKCalendarView.m; sourceTree = "<group>"; };
-		550BADD4192207E5001F393D /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
-		550BADD6192207E5001F393D /* left_arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = left_arrow.png; sourceTree = "<group>"; };
-		550BADD7192207E5001F393D /* left_arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "left_arrow@2x.png"; sourceTree = "<group>"; };
-		550BADD8192207E5001F393D /* right_arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = right_arrow.png; sourceTree = "<group>"; };
-		550BADD9192207E5001F393D /* right_arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "right_arrow@2x.png"; sourceTree = "<group>"; };
 		550BADE119220EE2001F393D /* TSCalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSCalendarViewController.h; sourceTree = "<group>"; };
 		550BADE219220EE2001F393D /* TSCalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSCalendarViewController.m; sourceTree = "<group>"; };
 		550BADE319220EE2001F393D /* TSCalendarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TSCalendarViewController.xib; sourceTree = "<group>"; };
@@ -314,6 +307,38 @@
 		5582D80C192493D100A2C921 /* TSRuleOnceMonth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSRuleOnceMonth.m; sourceTree = "<group>"; };
 		5582D80E192493EB00A2C921 /* TSRuleOnceYear.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSRuleOnceYear.h; sourceTree = "<group>"; };
 		5582D80F192493EB00A2C921 /* TSRuleOnceYear.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSRuleOnceYear.m; sourceTree = "<group>"; };
+		55D743F71928A0AF003B74AF /* ABCalendarPicker.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ABCalendarPicker.bundle; sourceTree = "<group>"; };
+		55D743F81928A0AF003B74AF /* ABCalendarPicker.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ABCalendarPicker.framework; sourceTree = "<group>"; };
+		55D743FA1928A0AF003B74AF /* ABCalendarPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABCalendarPicker.h; sourceTree = "<group>"; };
+		55D743FB1928A0AF003B74AF /* ABCalendarPickerDataSourceProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABCalendarPickerDataSourceProtocol.h; sourceTree = "<group>"; };
+		55D743FC1928A0AF003B74AF /* ABCalendarPickerDateProviderProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABCalendarPickerDateProviderProtocol.h; sourceTree = "<group>"; };
+		55D743FD1928A0AF003B74AF /* ABCalendarPickerDefaultDaysProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABCalendarPickerDefaultDaysProvider.h; sourceTree = "<group>"; };
+		55D743FE1928A0AF003B74AF /* ABCalendarPickerDefaultErasProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABCalendarPickerDefaultErasProvider.h; sourceTree = "<group>"; };
+		55D743FF1928A0AF003B74AF /* ABCalendarPickerDefaultMonthsProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABCalendarPickerDefaultMonthsProvider.h; sourceTree = "<group>"; };
+		55D744001928A0AF003B74AF /* ABCalendarPickerDefaultSeasonedMonthsProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABCalendarPickerDefaultSeasonedMonthsProvider.h; sourceTree = "<group>"; };
+		55D744011928A0AF003B74AF /* ABCalendarPickerDefaultStyleProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABCalendarPickerDefaultStyleProvider.h; sourceTree = "<group>"; };
+		55D744021928A0AF003B74AF /* ABCalendarPickerDefaultTripleWeekdaysProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABCalendarPickerDefaultTripleWeekdaysProvider.h; sourceTree = "<group>"; };
+		55D744031928A0AF003B74AF /* ABCalendarPickerDefaultWeekdaysProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABCalendarPickerDefaultWeekdaysProvider.h; sourceTree = "<group>"; };
+		55D744041928A0AF003B74AF /* ABCalendarPickerDefaultYearsProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABCalendarPickerDefaultYearsProvider.h; sourceTree = "<group>"; };
+		55D744051928A0AF003B74AF /* ABCalendarPickerDelegateProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABCalendarPickerDelegateProtocol.h; sourceTree = "<group>"; };
+		55D744061928A0AF003B74AF /* ABCalendarPickerStyleProviderProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABCalendarPickerStyleProviderProtocol.h; sourceTree = "<group>"; };
+		55D744071928A0AF003B74AF /* libABCalendarPicker.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libABCalendarPicker.a; sourceTree = "<group>"; };
+		55D744091928A0AF003B74AF /* ABCalendarPicker.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ABCalendarPicker.bundle; sourceTree = "<group>"; };
+		55D7440A1928A0AF003B74AF /* ABCalendarPicker.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ABCalendarPicker.framework; sourceTree = "<group>"; };
+		55D7440C1928A0AF003B74AF /* ABCalendarPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABCalendarPicker.h; sourceTree = "<group>"; };
+		55D7440D1928A0AF003B74AF /* ABCalendarPickerDataSourceProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABCalendarPickerDataSourceProtocol.h; sourceTree = "<group>"; };
+		55D7440E1928A0AF003B74AF /* ABCalendarPickerDateProviderProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABCalendarPickerDateProviderProtocol.h; sourceTree = "<group>"; };
+		55D7440F1928A0AF003B74AF /* ABCalendarPickerDefaultDaysProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABCalendarPickerDefaultDaysProvider.h; sourceTree = "<group>"; };
+		55D744101928A0AF003B74AF /* ABCalendarPickerDefaultErasProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABCalendarPickerDefaultErasProvider.h; sourceTree = "<group>"; };
+		55D744111928A0AF003B74AF /* ABCalendarPickerDefaultMonthsProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABCalendarPickerDefaultMonthsProvider.h; sourceTree = "<group>"; };
+		55D744121928A0AF003B74AF /* ABCalendarPickerDefaultSeasonedMonthsProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABCalendarPickerDefaultSeasonedMonthsProvider.h; sourceTree = "<group>"; };
+		55D744131928A0AF003B74AF /* ABCalendarPickerDefaultStyleProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABCalendarPickerDefaultStyleProvider.h; sourceTree = "<group>"; };
+		55D744141928A0AF003B74AF /* ABCalendarPickerDefaultTripleWeekdaysProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABCalendarPickerDefaultTripleWeekdaysProvider.h; sourceTree = "<group>"; };
+		55D744151928A0AF003B74AF /* ABCalendarPickerDefaultWeekdaysProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABCalendarPickerDefaultWeekdaysProvider.h; sourceTree = "<group>"; };
+		55D744161928A0AF003B74AF /* ABCalendarPickerDefaultYearsProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABCalendarPickerDefaultYearsProvider.h; sourceTree = "<group>"; };
+		55D744171928A0AF003B74AF /* ABCalendarPickerDelegateProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABCalendarPickerDelegateProtocol.h; sourceTree = "<group>"; };
+		55D744181928A0AF003B74AF /* ABCalendarPickerStyleProviderProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABCalendarPickerStyleProviderProtocol.h; sourceTree = "<group>"; };
+		55D744191928A0AF003B74AF /* libABCalendarPicker.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libABCalendarPicker.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -322,8 +347,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				550BAC971921EFB7001F393D /* CoreGraphics.framework in Frameworks */,
+				55D7441B1928A0AF003B74AF /* ABCalendarPicker.framework in Frameworks */,
+				55D7441E1928A0AF003B74AF /* ABCalendarPicker.framework in Frameworks */,
 				550BAC9B1921EFB7001F393D /* CoreData.framework in Frameworks */,
 				550BAC991921EFB7001F393D /* UIKit.framework in Frameworks */,
+				55D7441C1928A0AF003B74AF /* libABCalendarPicker.a in Frameworks */,
+				55D7441F1928A0AF003B74AF /* libABCalendarPicker.a in Frameworks */,
 				550BAC951921EFB7001F393D /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -409,7 +438,7 @@
 		550BAC9C1921EFB7001F393D /* TaskScheduler */ = {
 			isa = PBXGroup;
 			children = (
-				550BADD1192207E5001F393D /* CKCalendar */,
+				55D743F51928A0AF003B74AF /* ABCCalendarPicker */,
 				550BACD91921F55B001F393D /* IDPKit */,
 				550BACA51921EFB7001F393D /* TSAppDelegate.h */,
 				550BACA61921EFB7001F393D /* TSAppDelegate.m */,
@@ -844,28 +873,6 @@
 			path = src;
 			sourceTree = "<group>";
 		};
-		550BADD1192207E5001F393D /* CKCalendar */ = {
-			isa = PBXGroup;
-			children = (
-				550BADD2192207E5001F393D /* CKCalendarView.h */,
-				550BADD3192207E5001F393D /* CKCalendarView.m */,
-				550BADD4192207E5001F393D /* README.md */,
-				550BADD5192207E5001F393D /* resources */,
-			);
-			path = CKCalendar;
-			sourceTree = "<group>";
-		};
-		550BADD5192207E5001F393D /* resources */ = {
-			isa = PBXGroup;
-			children = (
-				550BADD6192207E5001F393D /* left_arrow.png */,
-				550BADD7192207E5001F393D /* left_arrow@2x.png */,
-				550BADD8192207E5001F393D /* right_arrow.png */,
-				550BADD9192207E5001F393D /* right_arrow@2x.png */,
-			);
-			path = resources;
-			sourceTree = "<group>";
-		};
 		550BADE019220E5E001F393D /* CalendarViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -884,6 +891,77 @@
 				550BADE019220E5E001F393D /* CalendarViewController */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		55D743F51928A0AF003B74AF /* ABCCalendarPicker */ = {
+			isa = PBXGroup;
+			children = (
+				55D743F61928A0AF003B74AF /* Debug-iphoneos */,
+				55D744081928A0AF003B74AF /* Debug-iphonesimulator */,
+			);
+			path = ABCCalendarPicker;
+			sourceTree = "<group>";
+		};
+		55D743F61928A0AF003B74AF /* Debug-iphoneos */ = {
+			isa = PBXGroup;
+			children = (
+				55D743F71928A0AF003B74AF /* ABCalendarPicker.bundle */,
+				55D743F81928A0AF003B74AF /* ABCalendarPicker.framework */,
+				55D743F91928A0AF003B74AF /* Headers */,
+				55D744071928A0AF003B74AF /* libABCalendarPicker.a */,
+			);
+			path = "Debug-iphoneos";
+			sourceTree = "<group>";
+		};
+		55D743F91928A0AF003B74AF /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				55D743FA1928A0AF003B74AF /* ABCalendarPicker.h */,
+				55D743FB1928A0AF003B74AF /* ABCalendarPickerDataSourceProtocol.h */,
+				55D743FC1928A0AF003B74AF /* ABCalendarPickerDateProviderProtocol.h */,
+				55D743FD1928A0AF003B74AF /* ABCalendarPickerDefaultDaysProvider.h */,
+				55D743FE1928A0AF003B74AF /* ABCalendarPickerDefaultErasProvider.h */,
+				55D743FF1928A0AF003B74AF /* ABCalendarPickerDefaultMonthsProvider.h */,
+				55D744001928A0AF003B74AF /* ABCalendarPickerDefaultSeasonedMonthsProvider.h */,
+				55D744011928A0AF003B74AF /* ABCalendarPickerDefaultStyleProvider.h */,
+				55D744021928A0AF003B74AF /* ABCalendarPickerDefaultTripleWeekdaysProvider.h */,
+				55D744031928A0AF003B74AF /* ABCalendarPickerDefaultWeekdaysProvider.h */,
+				55D744041928A0AF003B74AF /* ABCalendarPickerDefaultYearsProvider.h */,
+				55D744051928A0AF003B74AF /* ABCalendarPickerDelegateProtocol.h */,
+				55D744061928A0AF003B74AF /* ABCalendarPickerStyleProviderProtocol.h */,
+			);
+			path = Headers;
+			sourceTree = "<group>";
+		};
+		55D744081928A0AF003B74AF /* Debug-iphonesimulator */ = {
+			isa = PBXGroup;
+			children = (
+				55D744091928A0AF003B74AF /* ABCalendarPicker.bundle */,
+				55D7440A1928A0AF003B74AF /* ABCalendarPicker.framework */,
+				55D7440B1928A0AF003B74AF /* Headers */,
+				55D744191928A0AF003B74AF /* libABCalendarPicker.a */,
+			);
+			path = "Debug-iphonesimulator";
+			sourceTree = "<group>";
+		};
+		55D7440B1928A0AF003B74AF /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				55D7440C1928A0AF003B74AF /* ABCalendarPicker.h */,
+				55D7440D1928A0AF003B74AF /* ABCalendarPickerDataSourceProtocol.h */,
+				55D7440E1928A0AF003B74AF /* ABCalendarPickerDateProviderProtocol.h */,
+				55D7440F1928A0AF003B74AF /* ABCalendarPickerDefaultDaysProvider.h */,
+				55D744101928A0AF003B74AF /* ABCalendarPickerDefaultErasProvider.h */,
+				55D744111928A0AF003B74AF /* ABCalendarPickerDefaultMonthsProvider.h */,
+				55D744121928A0AF003B74AF /* ABCalendarPickerDefaultSeasonedMonthsProvider.h */,
+				55D744131928A0AF003B74AF /* ABCalendarPickerDefaultStyleProvider.h */,
+				55D744141928A0AF003B74AF /* ABCalendarPickerDefaultTripleWeekdaysProvider.h */,
+				55D744151928A0AF003B74AF /* ABCalendarPickerDefaultWeekdaysProvider.h */,
+				55D744161928A0AF003B74AF /* ABCalendarPickerDefaultYearsProvider.h */,
+				55D744171928A0AF003B74AF /* ABCalendarPickerDelegateProtocol.h */,
+				55D744181928A0AF003B74AF /* ABCalendarPickerStyleProviderProtocol.h */,
+			);
+			path = Headers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -966,15 +1044,11 @@
 				550BAD851921F55C001F393D /* .gitignore in Resources */,
 				550BAD831921F55C001F393D /* LICENSE in Resources */,
 				550BADB91921F55C001F393D /* LICENSE in Resources */,
-				550BADDB192207E5001F393D /* README.md in Resources */,
 				550BAD871921F55C001F393D /* README.md in Resources */,
 				550BADBC1921F55C001F393D /* .gitignore in Resources */,
 				550BADE519220EE2001F393D /* TSCalendarViewController.xib in Resources */,
-				550BADDD192207E5001F393D /* left_arrow@2x.png in Resources */,
 				550BAD811921F55C001F393D /* .gitignore in Resources */,
 				550BADB41921F55C001F393D /* .gitignore in Resources */,
-				550BADDE192207E5001F393D /* right_arrow.png in Resources */,
-				550BADDF192207E5001F393D /* right_arrow@2x.png in Resources */,
 				550BAD8E1921F55C001F393D /* README.md in Resources */,
 				550BADB51921F55C001F393D /* LICENSE in Resources */,
 				550BAD8C1921F55C001F393D /* .gitignore in Resources */,
@@ -990,8 +1064,9 @@
 				550BAD821921F55C001F393D /* .gitmodules in Resources */,
 				550BAD861921F55C001F393D /* LICENSE in Resources */,
 				550BACCA1921EFF5001F393D /* .gitignore in Resources */,
-				550BADDC192207E5001F393D /* left_arrow.png in Resources */,
+				55D7441A1928A0AF003B74AF /* ABCalendarPicker.bundle in Resources */,
 				550BADBA1921F55C001F393D /* README.md in Resources */,
+				55D7441D1928A0AF003B74AF /* ABCalendarPicker.bundle in Resources */,
 				550BACAC1921EFB7001F393D /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1027,7 +1102,6 @@
 				5582D8071924933000A2C921 /* TSRuleOnceDay.m in Sources */,
 				5582D8041924931A00A2C921 /* TSTaskRule.m in Sources */,
 				550BADC81921F55C001F393D /* UIView+IDPExtensions.m in Sources */,
-				550BADDA192207E5001F393D /* CKCalendarView.m in Sources */,
 				550BAD9C1921F55C001F393D /* IDPBufferArray.m in Sources */,
 				550BAD9B1921F55C001F393D /* IDPBlock.m in Sources */,
 				550BADAD1921F55C001F393D /* IDPRetainingReference.m in Sources */,
@@ -1204,9 +1278,22 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/TaskScheduler/ABCCalendarPicker",
+					"$(PROJECT_DIR)/TaskScheduler/ABCCalendarPicker/Debug-iphoneos",
+					"$(PROJECT_DIR)/TaskScheduler/ABCCalendarPicker/Debug-iphonesimulator",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TaskScheduler/TaskScheduler-Prefix.pch";
 				INFOPLIST_FILE = "TaskScheduler/TaskScheduler-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/TaskScheduler/ABCCalendarPicker",
+					"$(PROJECT_DIR)/TaskScheduler/ABCCalendarPicker/Debug-iphoneos",
+					"$(PROJECT_DIR)/TaskScheduler/ABCCalendarPicker/Debug-iphonesimulator",
+				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1217,9 +1304,22 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/TaskScheduler/ABCCalendarPicker",
+					"$(PROJECT_DIR)/TaskScheduler/ABCCalendarPicker/Debug-iphoneos",
+					"$(PROJECT_DIR)/TaskScheduler/ABCCalendarPicker/Debug-iphonesimulator",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TaskScheduler/TaskScheduler-Prefix.pch";
 				INFOPLIST_FILE = "TaskScheduler/TaskScheduler-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/TaskScheduler/ABCCalendarPicker",
+					"$(PROJECT_DIR)/TaskScheduler/ABCCalendarPicker/Debug-iphoneos",
+					"$(PROJECT_DIR)/TaskScheduler/ABCCalendarPicker/Debug-iphonesimulator",
+				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

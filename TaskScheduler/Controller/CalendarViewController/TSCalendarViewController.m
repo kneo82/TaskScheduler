@@ -8,20 +8,15 @@
 
 #import "TSCalendarViewController.h"
 #import "TSCalendarView.h"
-#import "CKCalendarView.h"
+
 
 #import "TSFindTasks.h"
 #import "UIViewController+IDPExtensions.h"
 #import "NSDate+IDPExtensions.h"
 #import "NSDateComponents+IDPExtinsions.h"
 
-@interface TSCalendarViewController () <CKCalendarDelegate>
+@interface TSCalendarViewController ()
 @property (nonatomic, readonly) TSCalendarView *calendarView;
-@property(nonatomic, retain) UILabel *dateLabel;
-@property(nonatomic, retain) NSDateFormatter *dateFormatter;
-@property(nonatomic, retain) NSDate *minimumDate;
-@property(nonatomic, retain) NSArray *disabledDates;
-//@property(nonatomic, retain) CKCalendarView *calendar;
 
 @end
 
@@ -31,10 +26,6 @@
 #pragma mark Initializations and Deallocations
 
 - (void)dealloc {
-    self.dateLabel = nil;
-    self.dateFormatter = nil;
-    self.minimumDate = nil;
-    self.disabledDates = nil;
     
     [super dealloc];
 }
@@ -54,11 +45,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.calendarView.calendar.delegate = self;
-    
-    self.dateFormatter = [[[NSDateFormatter alloc] init] autorelease];
-    [self.dateFormatter setDateFormat:@"dd/MM/yyyy"];
-
     TSFindTasks *findTask = [[[TSFindTasks alloc] init] autorelease];
     
     NSDateComponents *components = [[NSDate date] components:(NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit)];
@@ -79,7 +65,8 @@
     
     [findTask addObserver:self];
     [findTask findTasks];
-    [findTask cancel];
+//    [findTask cancel];
+//    [findTask release];
 }
 
 - (void)localeDidChange {
@@ -94,52 +81,16 @@ IDPViewControllerViewOfClassGetterSynthesize(TSCalendarView, calendarView);
 #pragma mark -
 #pragma mark Private
 
-- (BOOL)dateIsDisabled:(NSDate *)date {
-    for (NSDate *disabledDate in self.disabledDates) {
-        if ([disabledDate isEqualToDate:date]) {
-            return YES;
-        }
-    }
-    return NO;
-}
 
-#pragma mark -
-#pragma mark - CKCalendarDelegate
-
-- (void)calendar:(CKCalendarView *)calendar configureDateItem:(CKDateItem *)dateItem forDate:(NSDate *)date {
-    // TODO: play with the coloring if we want to...
-//    NSLog(@"Configure %@", dateItem);
-    
-    if ([self dateIsDisabled:date]) {
-        dateItem.backgroundColor = [UIColor redColor];
-        dateItem.textColor = [UIColor whiteColor];
-    }
-}
-
-//- (BOOL)calendar:(CKCalendarView *)calendar didChangeToMonth:(NSDate *)date {
-//    NSLog(@"Configure %@", calendar.datesShowing);
-//    return YES;
-//}
-
-- (BOOL)calendar:(CKCalendarView *)calendar willSelectDate:(NSDate *)date {
-    NSLog(@"%@",  [self.dateFormatter stringFromDate:date]);
-    return ![self dateIsDisabled:date];
-}
-
-- (void)calendar:(CKCalendarView *)calendar didSelectDate:(NSDate *)date {
-    self.dateLabel.text = [self.dateFormatter stringFromDate:date];
-}
-
-- (void)calendar:(CKCalendarView *)calendar didLayoutInRect:(CGRect)frame {
-    //    NSLog(@"calendar layout: %@", NSStringFromCGRect(frame));
-}
 
 #pragma mark -
 #pragma mark TDTaskCompletion
 
 - (void)modelDidLoad:(id)object {
     TSFindTasks *task = object;
-    NSLog(@"******Dates & Event **********\n\n%@", task.tasksWithDates);
+//    NSLog(@"******Dates & Event **********\n\n%@", task.tasksWithDates);
+    
+
 }
 
 - (void)modelDidCancelLoading:(id)theModel {

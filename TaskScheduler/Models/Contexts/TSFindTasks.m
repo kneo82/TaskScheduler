@@ -19,7 +19,7 @@
 #import "NSDateComponents+IDPExtinsions.h"
 
 @interface TSFindTasks ()
-
+@property (nonatomic, assign) __block id weakSelf;// = self;
 @end
 
 @implementation TSFindTasks
@@ -28,9 +28,8 @@
 #pragma mark Initializations and Deallocations
 
 - (void)dealloc {
-    self.startDate = nil;
-    self.endDate = nil;
-    self.tasksWithDates = nil;
+    NSLog(@"Dealloc");
+    [self cancel];
     
     [super dealloc];
 }
@@ -46,8 +45,9 @@
     if (![super load]) {
         return NO;
     }
-    
+
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+        
         [self tasksInCurrentDataRange];
     });
     

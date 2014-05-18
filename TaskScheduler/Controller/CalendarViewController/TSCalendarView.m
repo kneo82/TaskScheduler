@@ -7,7 +7,6 @@
 //
 
 #import "TSCalendarView.h"
-#import "CKCalendarView.h"
 
 @implementation TSCalendarView
 
@@ -33,15 +32,7 @@
 #pragma mark View Lifecycle
 
 - (void)awakeFromNib {
-    CKCalendarView *calendar = self.calendar;
     
-    calendar.onlyShowCurrentMonth = NO;
-    calendar.adaptHeightToNumberOfWeeksInMonth = YES;
-    [calendar setMonthButtonColor:[UIColor grayColor]];
-    [calendar setInnerBorderColor:[UIColor blueColor]];
-    [calendar setDayOfWeekBottomColor:[UIColor blackColor] topColor:[UIColor darkGrayColor]];
-    calendar.dayOfWeekTextColor = [UIColor whiteColor];
-    calendar.backgroundColor = [UIColor blackColor];
 }
 
 
