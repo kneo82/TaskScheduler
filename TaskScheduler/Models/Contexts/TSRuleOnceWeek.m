@@ -19,7 +19,7 @@ static const NSUInteger kTSDaysInWeek = 7;
 
 - (NSDate *)nextDate {
     NSDate *currentDate = self.currentDate;
-    NSDate *taskDate = self.task.date;
+    NSDate *taskDate = [self.task.date midnightDate];
     
     if (NSOrderedAscending == [currentDate compare:taskDate]) {
         self.currentDate = taskDate;
@@ -41,7 +41,7 @@ static const NSUInteger kTSDaysInWeek = 7;
     components.day -= kTSDaysInWeek;
     
     NSDate *datePreview = [components dateFromComponents];
-    NSDate *taskDate = self.task.date;
+    NSDate *taskDate = [self.task.date midnightDate];
     
     if (NSOrderedAscending == [datePreview compare:taskDate]) {
         self.currentDate = taskDate;

@@ -17,7 +17,7 @@
 
 - (NSDate *)nextDate {
     NSDate *currentDate = self.currentDate;
-    NSDate *taskDate = self.task.date;
+    NSDate *taskDate = [self.task.date midnightDate];
     
     if (NSOrderedAscending == [currentDate compare:taskDate]) {
         self.currentDate = taskDate;
@@ -39,7 +39,7 @@
     components.year --;
     
     NSDate *datePreview = [self dateInCurrentMonthFromComponent:components];
-    NSDate *taskDate = self.task.date;
+    NSDate *taskDate = [self.task.date midnightDate];
     
     if (NSOrderedAscending == [datePreview compare:taskDate]) {
         self.currentDate = taskDate;

@@ -23,6 +23,8 @@ static const NSUInteger kTSFirstDay = 1;
 
 @implementation TSTaskRule
 
+//@synthesize currentDate = _currentDate;
+
 #pragma mark -
 #pragma mark Class Methods
 
@@ -34,6 +36,7 @@ static const NSUInteger kTSFirstDay = 1;
     
     TSTaskRule *context = [class object];
     context.task = task;
+    context.currentDate = task.date;
     
     return context;
 }
@@ -51,12 +54,16 @@ static const NSUInteger kTSFirstDay = 1;
 #pragma mark -
 #pragma mark Accessors
 
-- (NSDate *)currentDate {
-    if (!_currentDate) {
-        self.currentDate = [NSDate midnightDateForDate:self.task.date];
-    }
-    
-    return _currentDate;
+//- (NSDate *)currentDate {
+//    if (!_currentDate) {
+//        self.currentDate = self.task.date;
+//    }
+//    
+//    return _currentDate;
+//}
+
+- (void)setCurrentDate:(NSDate *)currentDate {
+    IDPNonatomicRetainPropertySynthesize(_currentDate, [currentDate midnightDate]);
 }
 
 #pragma mark -

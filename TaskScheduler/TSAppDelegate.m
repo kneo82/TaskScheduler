@@ -17,6 +17,7 @@
 
 #import "TSTask.h"
 #import "TSRuleType.h"
+#import "TSUser.h"
 
 static NSString * const kTSStoreName = @"TaskScheduler";
 
@@ -56,8 +57,8 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
     window.backgroundColor = [UIColor whiteColor];
     [window makeKeyAndVisible];
     
-    
-    
+//    TSUser *user = [TSUser managedObject];
+//    
 //    TSRuleType *ruleOnceDay = [TSRuleType managedObject];
 //
 //    ruleOnceDay.ruleType = @"TSRuleOnceDay";
@@ -87,12 +88,18 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 //    TSTask *task3 = [TSTask managedObject];
 //    task3.date =  task2.date;
 //    [ruleOnceWeek addTask:task3];
-//
+//    
+//    [user addRuleType:ruleOnceYear];
+//    [user addRuleType:ruleOnceWeek];
+//    [user addRuleType:ruleOnceMonth];
+//    [user addRuleType:ruleOnceDay];
+//    [user saveManagedObject];
+    
 //    [ruleOnceYear saveManagedObject];
 //    [ruleOnceWeek saveManagedObject];
 //    [ruleOnceMonth saveManagedObject];
 //    [ruleOnceDay saveManagedObject];
-//    
+    
     return YES;
 }
 

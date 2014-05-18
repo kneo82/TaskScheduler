@@ -10,11 +10,13 @@
 #import <CoreData/CoreData.h>
 
 @class TSTask;
+@class TSUser;
 
 @interface TSRuleType : NSManagedObject
 @property (nonatomic, retain) NSString  *ruleType;
 @property (nonatomic, retain) NSSet     *tasksSet;
 @property (nonatomic, retain) NSArray   *tasks;
+@property (nonatomic, retain) TSUser    *user;
 
 @end
 

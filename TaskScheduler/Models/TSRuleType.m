@@ -8,6 +8,7 @@
 
 #import "TSRuleType.h"
 #import "TSTask.h"
+#import "TSUser.h"
 
 #import "IDPActiveRecordKit.h"
 
@@ -18,6 +19,7 @@ static NSString * const kTSTasks = @"tasksSet";
 @dynamic ruleType;
 @dynamic tasks;
 @dynamic tasksSet;
+@dynamic user;
 
 #pragma mark -
 #pragma mark Class Methods
@@ -31,7 +33,7 @@ static NSString * const kTSTasks = @"tasksSet";
 }
 
 - (NSArray *)tasks {
-    NSSet *result = [self customValueForKey:NSStringFromSelector(@selector(tasks))];
+    NSSet *result = [self customValueForKey:NSStringFromSelector(@selector(tasksSet))];
     return [result allObjects];
 }
 

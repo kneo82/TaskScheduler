@@ -1,4 +1,4 @@
-//
+ //
 //  TSFindeTasks.m
 //  TaskScheduler
 //
@@ -11,15 +11,18 @@
 #import "TSTask.h"
 #import "TSRuleType.h"
 #import "TSTaskRule.h"
+#import "TSTasksForDate.h"
+#import "TSUser.h"
 
 #import "IDPActiveRecordKit.h"
 #import "IDPCoreDataManager.h"
+#import "IDPPropertyMacros.h"
 
 #import "NSDate+IDPExtensions.h"
 #import "NSDateComponents+IDPExtinsions.h"
 
 @interface TSFindTasks ()
-@property (nonatomic, assign) __block id weakSelf;// = self;
+
 @end
 
 @implementation TSFindTasks
@@ -28,10 +31,16 @@
 #pragma mark Initializations and Deallocations
 
 - (void)dealloc {
-    NSLog(@"Dealloc");
     [self cancel];
     
     [super dealloc];
+}
+
+#pragma mark -
+#pragma mark Accessors
+
+- (void)setTaskForDate:(TSTasksForDate *)taskForDate {
+    IDPNonatomicRetainPropertySynthesize(_taskForDate, taskForDate);
 }
 
 #pragma mark -
@@ -55,9 +64,7 @@
 }
 
 - (void)cancel {
-    self.startDate = nil;
-    self.endDate = nil;
-    self.tasksWithDates = nil;
+    self.taskForDate = nil;
     
     [super cancel];
 }
@@ -66,28 +73,36 @@
 #pragma mark Private
 
 - (NSArray *)fetchTasks {
-    IDPCoreDataManager *manager = [IDPCoreDataManager sharedManager];
-    NSManagedObjectContext *context = manager.managedObjectContext;
-    NSString *entetyName = NSStringFromClass([TSTask class]);
+    TSUser *user = [TSUser managedObject];
+//    NSManagedObjectContext *context = manager.managedObjectContext;
+//    NSString *entetyName = NSStringFromClass([TSTask class]);
+//    
+//    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:entetyName];
+//    NSError *error;
+//    
+//    NSArray *tasks = [context executeFetchRequest:request error:&error];
+////    [context release];
+//    if (error) {
+//        NSLog(@"Error : %@", error);
+//        [self failLoading];
+//        
+//        return nil;
+//    }
+//
+    NSArray *ruleTypes = user.rulesType;
+    NSMutableArray *result = [NSMutableArray array];
     
-    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:entetyName];
-    NSError *error;
-    
-    NSArray *tasks = [context executeFetchRequest:request error:&error];
-    
-    if (error) {
-        NSLog(@"Error : %@", error);
-        [self failLoading];
-        
-        return nil;
+    for (TSRuleType *ruleType in ruleTypes) {
+        [result addObjectsFromArray:ruleType.tasks];
     }
-    
-    return tasks;
+    return result;
 }
 
 - (void)tasksInCurrentDataRange {
-    NSDate *startDate = self.startDate;
-    NSDate *endDate = self.endDate;
+    TSTasksForDate *taskForDate = self.taskForDate;
+    
+    NSDate *startDate = taskForDate.startDatePeriod;
+    NSDate *endDate = taskForDate.endDatePeriod;
     
     if (!startDate || !endDate) {
         [self failLoading];
@@ -115,7 +130,7 @@
         [rule release];
     }
     
-    self.tasksWithDates = [tasksWithDates copy];
+    [taskForDate setDatesWithTasks:tasksWithDates];
     
     [self finishLoading];
 }

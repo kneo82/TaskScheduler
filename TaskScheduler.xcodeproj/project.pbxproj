@@ -115,6 +115,8 @@
 		55D7441D1928A0AF003B74AF /* ABCalendarPicker.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 55D744091928A0AF003B74AF /* ABCalendarPicker.bundle */; };
 		55D7441E1928A0AF003B74AF /* ABCalendarPicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55D7440A1928A0AF003B74AF /* ABCalendarPicker.framework */; };
 		55D7441F1928A0AF003B74AF /* libABCalendarPicker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 55D744191928A0AF003B74AF /* libABCalendarPicker.a */; };
+		55D7444D1928D4D4003B74AF /* TSTasksForDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 55D7444C1928D4D4003B74AF /* TSTasksForDate.m */; };
+		55D7445019290B57003B74AF /* TSUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 55D7444F19290B57003B74AF /* TSUser.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -339,6 +341,10 @@
 		55D744171928A0AF003B74AF /* ABCalendarPickerDelegateProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABCalendarPickerDelegateProtocol.h; sourceTree = "<group>"; };
 		55D744181928A0AF003B74AF /* ABCalendarPickerStyleProviderProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABCalendarPickerStyleProviderProtocol.h; sourceTree = "<group>"; };
 		55D744191928A0AF003B74AF /* libABCalendarPicker.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libABCalendarPicker.a; sourceTree = "<group>"; };
+		55D7444B1928D4D4003B74AF /* TSTasksForDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSTasksForDate.h; sourceTree = "<group>"; };
+		55D7444C1928D4D4003B74AF /* TSTasksForDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSTasksForDate.m; sourceTree = "<group>"; };
+		55D7444E19290B57003B74AF /* TSUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSUser.h; sourceTree = "<group>"; };
+		55D7444F19290B57003B74AF /* TSUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSUser.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -374,12 +380,16 @@
 		55011B74192351CE00D0B7A3 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				55011B7519235B5400D0B7A3 /* Contexts */,
 				550BACA81921EFB7001F393D /* TaskScheduler.xcdatamodeld */,
+				55D7444E19290B57003B74AF /* TSUser.h */,
+				55D7444F19290B57003B74AF /* TSUser.m */,
 				55011B791923608C00D0B7A3 /* TSRuleType.h */,
 				55011B7A1923608C00D0B7A3 /* TSRuleType.m */,
 				55011B761923608B00D0B7A3 /* TSTask.h */,
 				55011B771923608B00D0B7A3 /* TSTask.m */,
-				55011B7519235B5400D0B7A3 /* Contexts */,
+				55D7444B1928D4D4003B74AF /* TSTasksForDate.h */,
+				55D7444C1928D4D4003B74AF /* TSTasksForDate.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1099,6 +1109,7 @@
 				550BADC21921F55C001F393D /* UIColor+IDPExtensions.m in Sources */,
 				550BADA11921F55C001F393D /* IDPModel.m in Sources */,
 				550BADAF1921F55C001F393D /* IDPRetainingDictionary.m in Sources */,
+				55D7445019290B57003B74AF /* TSUser.m in Sources */,
 				5582D8071924933000A2C921 /* TSRuleOnceDay.m in Sources */,
 				5582D8041924931A00A2C921 /* TSTaskRule.m in Sources */,
 				550BADC81921F55C001F393D /* UIView+IDPExtensions.m in Sources */,
@@ -1109,6 +1120,7 @@
 				550BADE419220EE2001F393D /* TSCalendarViewController.m in Sources */,
 				550BADC61921F55C001F393D /* UIStoryboard+IDPExtensions.m in Sources */,
 				550BADAE1921F55C001F393D /* IDPWeakReference.m in Sources */,
+				55D7444D1928D4D4003B74AF /* TSTasksForDate.m in Sources */,
 				550BAD961921F55C001F393D /* NSObject+IDPExtensions.m in Sources */,
 				550BADC31921F55C001F393D /* UIEvent+IDPExtensions.m in Sources */,
 				550BAD8B1921F55C001F393D /* NSManagedObjectID+IDPExtensions.m in Sources */,

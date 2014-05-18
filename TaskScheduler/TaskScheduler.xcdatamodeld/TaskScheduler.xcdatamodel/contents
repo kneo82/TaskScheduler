@@ -1,16 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5064" systemVersion="13C1021" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5064" systemVersion="13D65" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="TSRuleType" representedClassName="TSRuleType" syncable="YES">
         <attribute name="ruleType" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="tasksSet" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="TSTask" inverseName="ruleType" inverseEntity="TSTask" syncable="YES"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TSUser" inverseName="ruleTypeSet" inverseEntity="TSUser" syncable="YES"/>
     </entity>
     <entity name="TSTask" representedClassName="TSTask" syncable="YES">
         <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="ruleType" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TSRuleType" inverseName="tasksSet" inverseEntity="TSRuleType" syncable="YES"/>
     </entity>
+    <entity name="TSUser" representedClassName="TSUser" syncable="YES">
+        <relationship name="ruleTypeSet" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="TSRuleType" inverseName="user" inverseEntity="TSRuleType" syncable="YES"/>
+    </entity>
     <elements>
-        <element name="TSRuleType" positionX="-1145" positionY="3863" width="128" height="75"/>
-        <element name="TSTask" positionX="-1370" positionY="3861" width="128" height="88"/>
+        <element name="TSRuleType" positionX="-1233" positionY="4007" width="128" height="88"/>
+        <element name="TSTask" positionX="-1010" positionY="4007" width="128" height="88"/>
+        <element name="TSUser" positionX="-1449" positionY="4037" width="128" height="58"/>
     </elements>
 </model>
