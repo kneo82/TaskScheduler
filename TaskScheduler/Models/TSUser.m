@@ -60,4 +60,17 @@ static NSString * const kTSRuleTypeSet = @"ruleTypeSet";
     [value deleteManagedObject];
 }
 
+#pragma mark -
+#pragma mark Public
+
+- (BOOL)isHasRuleType:(NSString *)ruleType {
+    for (TSRuleType *rule in self.rulesType) {
+        if ([rule.ruleType isEqualToString:ruleType]) {
+            return YES;
+        }
+    }
+    
+    return NO;
+}
+
 @end

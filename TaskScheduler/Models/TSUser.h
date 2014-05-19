@@ -24,4 +24,6 @@
 - (void)addRuleTypeSet:(NSSet *)values;
 - (void)removeRuleTypeSet:(NSSet *)values;
 
+- (BOOL)isHasRuleType:(NSString *)ruleType;
+
 @end

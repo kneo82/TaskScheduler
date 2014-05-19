@@ -12,6 +12,12 @@
 #import "TSRuleType.h"
 #import "IDPActiveRecordKit.h"
 
+#import "TSRuleOnceYear.h"
+#import "TSRuleOnceWeek.h"
+#import "TSRuleOnceMonth.h"
+#import "TSRuleOnceDay.h"
+
+#import "IDPActiveRecordKit.h"
 #import "UIViewController+IDPInitialization.h"
 #import "UIViewController+IDPExtensions.h"
 
@@ -49,6 +55,40 @@
     TSUser *user = [TSUser managedObject];
     self.user = user;
     
+    NSMutableDictionary *dictionary = [NSMutableDictionary dictionary];
+    TSRuleType *rule = nil;
+    if (![user isHasRuleType:NSStringFromClass([TSRuleOnceDay class])]) {
+        rule = [TSRuleType managedObject];
+        rule.ruleType = NSStringFromClass([TSRuleOnceDay class]);
+        [user addRuleType:rule];
+    }
+    [dictionary setObject:rule forKey:@"Once a Day"];
+    
+    rule = nil;
+    if (![user isHasRuleType:NSStringFromClass([TSRuleOnceWeek class])]) {
+        rule = [TSRuleType managedObject];
+        rule.ruleType = NSStringFromClass([TSRuleOnceWeek class]);
+        [user addRuleType:rule];
+    }
+    [dictionary setObject:rule forKey:@"Once a Week"];
+    
+    rule = nil;
+    if (![user isHasRuleType:NSStringFromClass([TSRuleOnceMonth class])]) {
+        TSRuleType *rule = [TSRuleType managedObject];
+        rule.ruleType = NSStringFromClass([TSRuleOnceMonth class]);
+        [user addRuleType:rule];
+    }
+    [dictionary setObject:rule forKey:@"Once a Month"];
+    
+    rule = nil;
+    if (![user isHasRuleType:NSStringFromClass([TSRuleOnceYear class])]) {
+        TSRuleType *rule = [TSRuleType managedObject];
+        rule.ruleType = NSStringFromClass([TSRuleOnceYear class]);
+        [user addRuleType:rule];
+    }
+    [dictionary setObject:rule forKey:@"Once a Year"];
+
+    
     self.taskRules = user.rulesType;
 }
 
@@ -83,6 +123,11 @@ IDPViewControllerViewOfClassGetterSynthesize(TSNewTaskView, taskView);
 {
     TSRuleType *rule = self.taskRules[row];
     return rule.ruleType;
+}
+
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
+    TSRuleType *rule = self.taskRules[row];
+    NSLog(@"Selected row = %d, title = %@", row, rule.ruleType);
 }
 
 @end
