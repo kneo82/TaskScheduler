@@ -77,16 +77,20 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 //    
 //    TSTask *task1 = [TSTask managedObject];
 //    task1.date = [NSDate date];
+//    task1.title = @"Task1";
 //    
 //    [ruleOnceYear addTask:task1];
 //    
 //    TSTask *task2 = [TSTask managedObject];
 //    task2.date =  [task1.date dateByAddingTimeInterval:24*60*60];
+//    task2.title = @"Task2";
 //    
 //    [ruleOnceYear addTask:task2];
 //    
 //    TSTask *task3 = [TSTask managedObject];
 //    task3.date =  task2.date;
+//    task3.title = @"Task3";
+//    
 //    [ruleOnceWeek addTask:task3];
 //    
 //    [user addRuleType:ruleOnceYear];

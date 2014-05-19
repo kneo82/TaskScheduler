@@ -36,7 +36,7 @@ static const NSUInteger kTSDaysInWeek = 7;
     return dateNext;
 }
 
-- (NSDate *)previewDate {
+- (NSDate *)previousDate {
     NSDateComponents *components = [self.currentDate components:kTSRunitFlags];
     components.day -= kTSDaysInWeek;
     

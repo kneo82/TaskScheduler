@@ -11,6 +11,7 @@
 #import "TSCalendarView.h"
 #import "TSTasksForDate.h"
 #import "TSFindTasks.h"
+#import "TSTasksViewController.h"
 
 #import "IDPPropertyMacros.h"
 
@@ -18,6 +19,7 @@
 #import "NSDate+IDPExtensions.h"
 #import "NSDateComponents+IDPExtinsions.h"
 #import "NSObject+IDPExtensions.h"
+#import "UIViewController+IDPInitialization.h"
 
 @interface TSCalendarViewController () <ABCalendarPickerDelegateProtocol,
                                         ABCalendarPickerDataSourceProtocol>
@@ -115,10 +117,7 @@ IDPViewControllerViewOfClassGetterSynthesize(TSCalendarView, calendarView);
 
 - (void)modelDidLoad:(id)object {
     dispatch_async(dispatch_get_main_queue(), ^{
-//        [self.calendarView.calendar updateStateAnimated:YES];
-//        [self.calendarView.calendar  updateConstraintsIfNeeded];
         [self.calendarView.calendar updateStateAnimated:NO];
-
     });
 }
 
@@ -147,17 +146,20 @@ IDPViewControllerViewOfClassGetterSynthesize(TSCalendarView, calendarView);
           dateSelected:(NSDate*)date
              withState:(ABCalendarPickerState)state
 {
+    NSLog(@"\n\n*********\n\n dateSelected date %@ \n\n*********", [calendarPicker.daysProvider mainDateEnd]);
     NSDate *startDate = [calendarPicker.daysProvider dateForRow:0 andColumn:0];
     NSDate *endDate = [calendarPicker.daysProvider dateForRow:[calendarPicker.daysProvider rowsCount]-1
                                                     andColumn:[calendarPicker.daysProvider columnsCount]-1];
     
-//    NSLog(@"\n\n*********\n\n datestart = %@\n dateEnd = %@\n\n*********", startDate, endDate);
     if (![self.tasksForDates periodTheSameForStartDate:startDate endDate:endDate]) {
-        NSLog(@"\n\n*********\n\n datestart = %@\n dateEnd = %@\n\n*********", startDate, endDate);
-
         [self findeTasksForStartDate:startDate endDate:endDate];
+    } else {
+        TSTasksViewController *controller = [TSTasksViewController viewControllerWithDefaultNib];
+        controller.tasksForDate = self.tasksForDates;
+        controller.date = date;
+        
+        [self.navigationController pushViewController:controller animated:YES];
     }
-    
 }
 
 @end

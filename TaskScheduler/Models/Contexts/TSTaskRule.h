@@ -19,7 +19,7 @@
 + (id)contextWithTask:(TSTask *)task;
 
 - (NSDate *)nextDate;
-- (NSDate *)previewDate;
+- (NSDate *)previousDate;
 - (NSArray *)datesFromDate:(NSDate *)fromDate toDate:(NSDate *)toDate;
 - (NSDate *)dateInCurrentMonthFromComponent:(NSDateComponents *)component;
 

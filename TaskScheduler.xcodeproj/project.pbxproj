@@ -103,6 +103,15 @@
 		550BADE419220EE2001F393D /* TSCalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 550BADE219220EE2001F393D /* TSCalendarViewController.m */; };
 		550BADE519220EE2001F393D /* TSCalendarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 550BADE319220EE2001F393D /* TSCalendarViewController.xib */; };
 		550BADE8192210A6001F393D /* TSCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 550BADE7192210A6001F393D /* TSCalendarView.m */; };
+		550FAEF51929DAB3002260F3 /* TSTasksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 550FAEF31929DAB3002260F3 /* TSTasksViewController.m */; };
+		550FAEF61929DAB3002260F3 /* TSTasksViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 550FAEF41929DAB3002260F3 /* TSTasksViewController.xib */; };
+		550FAEF91929DCC6002260F3 /* TSTasksView.m in Sources */ = {isa = PBXBuildFile; fileRef = 550FAEF81929DCC6002260F3 /* TSTasksView.m */; };
+		550FAEFC1929DFD7002260F3 /* UITableView+TDExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 550FAEFB1929DFD7002260F3 /* UITableView+TDExtensions.m */; };
+		550FAEFF1929E3C2002260F3 /* TSCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 550FAEFE1929E3C2002260F3 /* TSCell.m */; };
+		550FAF011929E3D5002260F3 /* TSCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 550FAF001929E3D5002260F3 /* TSCell.xib */; };
+		550FAF061929F2C6002260F3 /* TSNewTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 550FAF041929F2C6002260F3 /* TSNewTaskViewController.m */; };
+		550FAF071929F2C6002260F3 /* TSNewTaskViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 550FAF051929F2C6002260F3 /* TSNewTaskViewController.xib */; };
+		550FAF0A1929F2E0002260F3 /* TSNewTaskView.m in Sources */ = {isa = PBXBuildFile; fileRef = 550FAF091929F2E0002260F3 /* TSNewTaskView.m */; };
 		5582D8011924917700A2C921 /* TSFindTasks.m in Sources */ = {isa = PBXBuildFile; fileRef = 5582D8001924917700A2C921 /* TSFindTasks.m */; };
 		5582D8041924931A00A2C921 /* TSTaskRule.m in Sources */ = {isa = PBXBuildFile; fileRef = 5582D8031924931A00A2C921 /* TSTaskRule.m */; };
 		5582D8071924933000A2C921 /* TSRuleOnceDay.m in Sources */ = {isa = PBXBuildFile; fileRef = 5582D8061924933000A2C921 /* TSRuleOnceDay.m */; };
@@ -297,6 +306,21 @@
 		550BADE319220EE2001F393D /* TSCalendarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TSCalendarViewController.xib; sourceTree = "<group>"; };
 		550BADE6192210A6001F393D /* TSCalendarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSCalendarView.h; sourceTree = "<group>"; };
 		550BADE7192210A6001F393D /* TSCalendarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSCalendarView.m; sourceTree = "<group>"; };
+		550FAEF21929DAB3002260F3 /* TSTasksViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSTasksViewController.h; sourceTree = "<group>"; };
+		550FAEF31929DAB3002260F3 /* TSTasksViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSTasksViewController.m; sourceTree = "<group>"; };
+		550FAEF41929DAB3002260F3 /* TSTasksViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TSTasksViewController.xib; sourceTree = "<group>"; };
+		550FAEF71929DCC6002260F3 /* TSTasksView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSTasksView.h; sourceTree = "<group>"; };
+		550FAEF81929DCC6002260F3 /* TSTasksView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSTasksView.m; sourceTree = "<group>"; };
+		550FAEFA1929DFD7002260F3 /* UITableView+TDExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+TDExtensions.h"; sourceTree = "<group>"; };
+		550FAEFB1929DFD7002260F3 /* UITableView+TDExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+TDExtensions.m"; sourceTree = "<group>"; };
+		550FAEFD1929E3C2002260F3 /* TSCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSCell.h; sourceTree = "<group>"; };
+		550FAEFE1929E3C2002260F3 /* TSCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSCell.m; sourceTree = "<group>"; };
+		550FAF001929E3D5002260F3 /* TSCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TSCell.xib; sourceTree = "<group>"; };
+		550FAF031929F2C6002260F3 /* TSNewTaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSNewTaskViewController.h; sourceTree = "<group>"; };
+		550FAF041929F2C6002260F3 /* TSNewTaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSNewTaskViewController.m; sourceTree = "<group>"; };
+		550FAF051929F2C6002260F3 /* TSNewTaskViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TSNewTaskViewController.xib; sourceTree = "<group>"; };
+		550FAF081929F2E0002260F3 /* TSNewTaskView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSNewTaskView.h; sourceTree = "<group>"; };
+		550FAF091929F2E0002260F3 /* TSNewTaskView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSNewTaskView.m; sourceTree = "<group>"; };
 		5582D7FF1924917700A2C921 /* TSFindTasks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSFindTasks.h; sourceTree = "<group>"; };
 		5582D8001924917700A2C921 /* TSFindTasks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSFindTasks.m; sourceTree = "<group>"; };
 		5582D8021924931A00A2C921 /* TSTaskRule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSTaskRule.h; sourceTree = "<group>"; };
@@ -493,6 +517,8 @@
 		550BACCC1921F29A001F393D /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				550FAEFA1929DFD7002260F3 /* UITableView+TDExtensions.h */,
+				550FAEFB1929DFD7002260F3 /* UITableView+TDExtensions.m */,
 				550BACD31921F29A001F393D /* UIWindow+TDExtensions.h */,
 				550BACD41921F29A001F393D /* UIWindow+TDExtensions.m */,
 			);
@@ -895,9 +921,38 @@
 			path = CalendarViewController;
 			sourceTree = "<group>";
 		};
+		550FAEF11929DA40002260F3 /* TasksViewController */ = {
+			isa = PBXGroup;
+			children = (
+				550FAEF21929DAB3002260F3 /* TSTasksViewController.h */,
+				550FAEF31929DAB3002260F3 /* TSTasksViewController.m */,
+				550FAEF41929DAB3002260F3 /* TSTasksViewController.xib */,
+				550FAEF71929DCC6002260F3 /* TSTasksView.h */,
+				550FAEF81929DCC6002260F3 /* TSTasksView.m */,
+				550FAEFD1929E3C2002260F3 /* TSCell.h */,
+				550FAEFE1929E3C2002260F3 /* TSCell.m */,
+				550FAF001929E3D5002260F3 /* TSCell.xib */,
+			);
+			path = TasksViewController;
+			sourceTree = "<group>";
+		};
+		550FAF021929F24E002260F3 /* NewTaskViewController */ = {
+			isa = PBXGroup;
+			children = (
+				550FAF031929F2C6002260F3 /* TSNewTaskViewController.h */,
+				550FAF041929F2C6002260F3 /* TSNewTaskViewController.m */,
+				550FAF051929F2C6002260F3 /* TSNewTaskViewController.xib */,
+				550FAF081929F2E0002260F3 /* TSNewTaskView.h */,
+				550FAF091929F2E0002260F3 /* TSNewTaskView.m */,
+			);
+			path = NewTaskViewController;
+			sourceTree = "<group>";
+		};
 		551070151923326E009A2A6E /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				550FAF021929F24E002260F3 /* NewTaskViewController */,
+				550FAEF11929DA40002260F3 /* TasksViewController */,
 				550BADE019220E5E001F393D /* CalendarViewController */,
 			);
 			path = Controller;
@@ -1066,6 +1121,7 @@
 				550BADBE1921F55C001F393D /* README.md in Resources */,
 				550BACA11921EFB7001F393D /* InfoPlist.strings in Resources */,
 				550BAD8D1921F55C001F393D /* LICENSE in Resources */,
+				550FAF011929E3D5002260F3 /* TSCell.xib in Resources */,
 				550BAD981921F55C001F393D /* .gitignore in Resources */,
 				550BAD991921F55C001F393D /* LICENSE in Resources */,
 				550BADB61921F55C001F393D /* README.md in Resources */,
@@ -1075,6 +1131,8 @@
 				550BAD861921F55C001F393D /* LICENSE in Resources */,
 				550BACCA1921EFF5001F393D /* .gitignore in Resources */,
 				55D7441A1928A0AF003B74AF /* ABCalendarPicker.bundle in Resources */,
+				550FAF071929F2C6002260F3 /* TSNewTaskViewController.xib in Resources */,
+				550FAEF61929DAB3002260F3 /* TSTasksViewController.xib in Resources */,
 				550BADBA1921F55C001F393D /* README.md in Resources */,
 				55D7441D1928A0AF003B74AF /* ABCalendarPicker.bundle in Resources */,
 				550BACAC1921EFB7001F393D /* Images.xcassets in Resources */,
@@ -1100,8 +1158,10 @@
 				550BAD881921F55C001F393D /* IDPCoreDataManager.m in Sources */,
 				550BACAA1921EFB7001F393D /* TaskScheduler.xcdatamodeld in Sources */,
 				550BADBB1921F55C001F393D /* IDPNetworkReachability.m in Sources */,
+				550FAF061929F2C6002260F3 /* TSNewTaskViewController.m in Sources */,
 				550BADCA1921F55C001F393D /* UIViewController+IDPInitialization.m in Sources */,
 				55011B7B1923608C00D0B7A3 /* TSRuleType.m in Sources */,
+				550FAF0A1929F2E0002260F3 /* TSNewTaskView.m in Sources */,
 				5582D80A1924934300A2C921 /* TSRuleOnceWeek.m in Sources */,
 				550BADB01921F55C001F393D /* IDPStackArray.m in Sources */,
 				550BAD951921F55C001F393D /* NSFileManager+IDPExtensions.m in Sources */,
@@ -1113,6 +1173,7 @@
 				5582D8071924933000A2C921 /* TSRuleOnceDay.m in Sources */,
 				5582D8041924931A00A2C921 /* TSTaskRule.m in Sources */,
 				550BADC81921F55C001F393D /* UIView+IDPExtensions.m in Sources */,
+				550FAEFC1929DFD7002260F3 /* UITableView+TDExtensions.m in Sources */,
 				550BAD9C1921F55C001F393D /* IDPBufferArray.m in Sources */,
 				550BAD9B1921F55C001F393D /* IDPBlock.m in Sources */,
 				550BADAD1921F55C001F393D /* IDPRetainingReference.m in Sources */,
@@ -1122,6 +1183,7 @@
 				550BADAE1921F55C001F393D /* IDPWeakReference.m in Sources */,
 				55D7444D1928D4D4003B74AF /* TSTasksForDate.m in Sources */,
 				550BAD961921F55C001F393D /* NSObject+IDPExtensions.m in Sources */,
+				550FAEF91929DCC6002260F3 /* TSTasksView.m in Sources */,
 				550BADC31921F55C001F393D /* UIEvent+IDPExtensions.m in Sources */,
 				550BAD8B1921F55C001F393D /* NSManagedObjectID+IDPExtensions.m in Sources */,
 				550BADA61921F55C001F393D /* IDPOCContext.m in Sources */,
@@ -1144,11 +1206,13 @@
 				550BADAA1921F55C001F393D /* NSObject+IDPOCExtensionsPrivate.m in Sources */,
 				550BADA01921F55C001F393D /* IDPMachTimer.m in Sources */,
 				5582D8011924917700A2C921 /* TSFindTasks.m in Sources */,
+				550FAEFF1929E3C2002260F3 /* TSCell.m in Sources */,
 				550BADC41921F55C001F393D /* UIImage+IDPExtensions.m in Sources */,
 				550BAD9D1921F55C001F393D /* IDPKeyPathObserver.m in Sources */,
 				550BAD9F1921F55C001F393D /* IDPKVOMutableArray.m in Sources */,
 				550BAD941921F55C001F393D /* NSDateComponents+IDPExtinsions.m in Sources */,
 				5582D80D192493D100A2C921 /* TSRuleOnceMonth.m in Sources */,
+				550FAEF51929DAB3002260F3 /* TSTasksViewController.m in Sources */,
 				550BADA91921F55C001F393D /* NSObject+IDPOCExtensions.m in Sources */,
 				550BADC71921F55C001F393D /* UITableView+IDPCellLoading.m in Sources */,
 				550BADAB1921F55C001F393D /* IDPObservableObject.m in Sources */,

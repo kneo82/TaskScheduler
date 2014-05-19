@@ -73,7 +73,7 @@ static const NSUInteger kTSFirstDay = 1;
     return nil;
 }
 
-- (NSDate *)previewDate {
+- (NSDate *)previousDate {
     return nil;
 }
 
@@ -91,7 +91,7 @@ static const NSUInteger kTSFirstDay = 1;
     fromDate = [NSDate midnightDateForDate:fromDate];
     toDate = [NSDate midnightDateForDate:toDate];
 
-    [self lastPreviewDateToDate:fromDate];
+    [self lastPreviousDateToDate:fromDate];
     
     NSMutableArray *dates = [NSMutableArray array];
     
@@ -125,11 +125,11 @@ static const NSUInteger kTSFirstDay = 1;
 #pragma mark -
 #pragma mark Private
 
-- (NSDate *)lastPreviewDateToDate:(NSDate *)date {
+- (NSDate *)lastPreviousDateToDate:(NSDate *)date {
     while (NSOrderedAscending == [[self nextDate] compare:date]) {
     }
     
-    [self previewDate];
+    [self previousDate];
     
     return self.currentDate;
 }
