@@ -78,6 +78,7 @@ IDPViewControllerViewOfClassGetterSynthesize(TSTasksView, taskView);
 
 - (void)onAddTask:(id)sender {
     TSNewTaskViewController *view = [TSNewTaskViewController viewControllerWithDefaultNib];
+    view.date = self.date;
     [self.navigationController pushViewController:view animated:YES];
 }
 

@@ -9,6 +9,7 @@
 #import "TSNewTaskViewController.h"
 #import "TSNewTaskView.h"
 #import "TSUser.h"
+#import "TSTask.h"
 #import "TSRuleType.h"
 #import "IDPActiveRecordKit.h"
 
@@ -23,8 +24,10 @@
 
 @interface TSNewTaskViewController ()
 @property (nonatomic, readonly) TSNewTaskView   *taskView;
-@property (nonatomic, retain)   NSArray         *taskRules;
+@property (nonatomic, retain)   NSDictionary    *taskRules;
 @property (nonatomic, retain)   TSUser          *user;
+//@property (nonatomic, retain)   TSRuleType      *selectedRule;
+
 @end
 
 @implementation TSNewTaskViewController
@@ -35,6 +38,7 @@
 - (void)dealloc {
     self.taskRules = nil;
     self.date = nil;
+    self.user = nil;
     
     [super dealloc];
 }
@@ -48,48 +52,10 @@
     return self;
 }
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
     
-    TSUser *user = [TSUser managedObject];
-    self.user = user;
-    
-    NSMutableDictionary *dictionary = [NSMutableDictionary dictionary];
-    TSRuleType *rule = nil;
-    if (![user isHasRuleType:NSStringFromClass([TSRuleOnceDay class])]) {
-        rule = [TSRuleType managedObject];
-        rule.ruleType = NSStringFromClass([TSRuleOnceDay class]);
-        [user addRuleType:rule];
-    }
-    [dictionary setObject:rule forKey:@"Once a Day"];
-    
-    rule = nil;
-    if (![user isHasRuleType:NSStringFromClass([TSRuleOnceWeek class])]) {
-        rule = [TSRuleType managedObject];
-        rule.ruleType = NSStringFromClass([TSRuleOnceWeek class]);
-        [user addRuleType:rule];
-    }
-    [dictionary setObject:rule forKey:@"Once a Week"];
-    
-    rule = nil;
-    if (![user isHasRuleType:NSStringFromClass([TSRuleOnceMonth class])]) {
-        TSRuleType *rule = [TSRuleType managedObject];
-        rule.ruleType = NSStringFromClass([TSRuleOnceMonth class]);
-        [user addRuleType:rule];
-    }
-    [dictionary setObject:rule forKey:@"Once a Month"];
-    
-    rule = nil;
-    if (![user isHasRuleType:NSStringFromClass([TSRuleOnceYear class])]) {
-        TSRuleType *rule = [TSRuleType managedObject];
-        rule.ruleType = NSStringFromClass([TSRuleOnceYear class]);
-        [user addRuleType:rule];
-    }
-    [dictionary setObject:rule forKey:@"Once a Year"];
-
-    
-    self.taskRules = user.rulesType;
+    [self setup];
 }
 
 - (void)didReceiveMemoryWarning
@@ -102,6 +68,56 @@
 #pragma mark Accessors
 
 IDPViewControllerViewOfClassGetterSynthesize(TSNewTaskView, taskView);
+
+#pragma mark -
+#pragma mark Private
+
+- (void)setup {
+    UIBarButtonItem *saveEventButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(saveEvent)];
+    [saveEventButton autorelease];
+    
+    self.navigationItem.rightBarButtonItem = saveEventButton;
+    
+    TSUser *user = [TSUser managedObject];
+    self.user = user;
+    
+    NSMutableDictionary *dictionary = [NSMutableDictionary dictionary];
+    [dictionary setObject:NSStringFromClass([TSRuleOnceDay class]) forKey:@"Once a Day"];
+    [dictionary setObject:NSStringFromClass([TSRuleOnceWeek class]) forKey:@"Once a Week"];
+    [dictionary setObject:NSStringFromClass([TSRuleOnceMonth class]) forKey:@"Once a Month"];
+    [dictionary setObject:NSStringFromClass([TSRuleOnceYear class]) forKey:@"Once a Year"];
+    
+//    NSArray *keys = [dictionary allKeys];
+//    for (NSString *key in keys) {
+//        TSRuleType *rule = nil;
+//        rule = [TSRuleType managedObjectForKey:[dictionary objectForKey:key]];
+//        if (!rule.ruleType) {
+//            rule.ruleType = NSStringFromClass([TSUser class]);
+//            [user addRuleType:rule];
+//        }
+//        [dictionary setObject:rule forKey:key];
+//    }
+    
+    self.taskRules = dictionary;
+}
+
+- (void)saveEvent {
+    TSRuleType *rule = nil;
+    NSArray *keys = [self.taskRules allKeys];
+    NSString *selectedKey = keys[[self.taskView.rulePicker selectedRowInComponent:0]];
+    rule = [TSRuleType managedObjectForKey:[self.taskRules objectForKey:selectedKey]];
+    if (!rule.ruleType) {
+        rule.ruleType = NSStringFromClass([TSUser class]);
+        [self.user addRuleType:rule];
+    }
+    
+    TSTask *task = [TSTask managedObject];
+    task.title = self.taskView.titleTextField.text;
+    task.date = self.date;
+    [rule addTask:task];
+    
+    [self.user saveManagedObject];
+}
 
 #pragma mark -
 #pragma mark UIPickerViewDataSource
@@ -121,13 +137,17 @@ IDPViewControllerViewOfClassGetterSynthesize(TSNewTaskView, taskView);
              titleForRow:(NSInteger)row
             forComponent:(NSInteger)component
 {
-    TSRuleType *rule = self.taskRules[row];
-    return rule.ruleType;
+    NSArray *keys = [self.taskRules allKeys];
+
+    return keys[row];
 }
 
-- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
-    TSRuleType *rule = self.taskRules[row];
-    NSLog(@"Selected row = %d, title = %@", row, rule.ruleType);
-}
+//- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
+//    NSArray *keys = [self.taskRules allKeys];
+//    
+//    TSRuleType *rule = [self.taskRules objectForKey:keys[row]];
+//    
+//    NSLog(@"************##############  %@", keys[row]);
+//}
 
 @end

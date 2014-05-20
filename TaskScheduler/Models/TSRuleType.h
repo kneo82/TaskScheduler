@@ -22,6 +22,8 @@
 
 @interface TSRuleType (CoreDataGeneratedAccessors)
 
++ (id)managedObjectForKey:(NSString *)key;
+
 - (void)addTask:(TSTask *)value;
 - (void)removeTask:(TSTask *)value;
 - (void)addTasksSet:(NSSet *)values;

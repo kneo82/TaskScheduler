@@ -13,6 +13,7 @@
 #import "IDPActiveRecordKit.h"
 
 static NSString * const kTSTasks = @"tasksSet";
+static NSString * const kPredicate = @"ruleType == %@";
 
 @implementation TSRuleType
 
@@ -23,6 +24,25 @@ static NSString * const kTSTasks = @"tasksSet";
 
 #pragma mark -
 #pragma mark Class Methods
+
++ (id)managedObjectForKey:(NSString *)key {
+    NSPredicate *predicate = nil;
+    predicate = [NSPredicate predicateWithFormat:kPredicate, key];
+    
+    NSArray *array = [self fetchEntityWithSortDescriptors:nil
+                                                predicate:predicate
+                                            prefetchPaths:nil];
+    
+    TSRuleType *result = nil;
+    
+    if (0 != [array count]) {
+        result = [array firstObject];
+    } else {
+        result = [super managedObject];
+    }
+    
+    return  result;
+}
 
 #pragma mark -
 #pragma mark Accessors
